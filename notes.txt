@@ -1,8 +1,6 @@
 decision origins file id:
 2966266472
 
-	override normal knight castle
-	need job icons
 	need description on job effects (like job_knight_effect_desc)
 
 KNIGHT ACOT MOD

@@ -47,7 +47,7 @@ building_order_keep = {
 
 	# this stuff doesnt change depending on the tech
 	planet_modifier = {
-		planet_immigration_pull_add = 10 # should be 5, but changed for debug
+		planet_immigration_pull_add = 5
 		planet_resettlement_unemployed_destination_mult = 1
 	}
 
@@ -302,19 +302,136 @@ building_order_castle = {
 	}
 
 	planet_modifier = {
-		job_squire_add = 1
-		job_knight_add = 1
-
 		planet_immigration_pull_add = 1
 		planet_resettlement_unemployed_destination_mult = 0.2
+	}
+
+	# vanilla capital
+	triggered_planet_modifier = {
+		potential = {
+			has_enigmatic_capital = no
+		}
+		modifier = { 
+			job_squire_add = 1
+			job_knight_add = 1
+		}
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
+			has_enigmatic_capital = no
 		}
 		modifier = {
 			job_knight_add = 1
+		}
+	}
+
+	# delta capital
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_dm_ancient_control_center
+				has_building = building_dm_ancient_palace
+			}
+		}
+		modifier = { 
+			job_delta_squire_add = 1
+			job_delta_knight_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { NOT = { has_country_flag = quest_over } }
+			OR = {
+				has_building = building_dm_ancient_hive_cluster
+				has_building = building_dm_ancient_control_center
+				has_building = building_dm_ancient_palace
+			}
+		}
+		modifier = {
+			job_delta_knight_add = 1
+		}
+	}
+
+	# alpha capital
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_ae_ancient_control_center
+				has_building = building_ae_ancient_palace
+			}
+		}
+		modifier = { 
+			job_alpha_squire_add = 1
+			job_alpha_knight_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { NOT = { has_country_flag = quest_over } }
+			OR = {
+				has_building = building_ae_ancient_hive_cluster
+				has_building = building_ae_ancient_control_center
+				has_building = building_ae_ancient_palace
+			}
+		}
+		modifier = {
+			job_alpha_knight_add = 1
+		}
+	}
+
+	# phanon capital
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_building = building_phanon_hive_cluster
+				has_building = building_phanon_control_center
+				has_building = building_phanon_palace
+			}
+		}
+		modifier = { 
+			job_phanon_squire_add = 1
+			job_phanon_knight_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { NOT = { has_country_flag = quest_over } }
+			OR = {
+				has_building = building_phanon_hive_cluster
+				has_building = building_phanon_control_center
+				has_building = building_phanon_palace
+			}
+		}
+		modifier = {
+			job_phanon_knight_add = 1
+		}
+	}
+
+	# stellarite capital
+	triggered_planet_modifier = {
+		potential = {
+			has_stellarite_capital = yes
+		}
+		modifier = { 
+			job_stellarite_squire_add = 1
+			job_stellarite_knight_add = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { NOT = { has_country_flag = quest_over } }
+			has_stellarite_capital = yes
+		}
+		modifier = {
+			job_stellarite_knight_add = 1
 		}
 	}
 
