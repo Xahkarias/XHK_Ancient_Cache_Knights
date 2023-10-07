@@ -1,0 +1,65 @@
+decision origins file id:
+2966266472
+
+	override normal knight castle
+	need job icons
+	need description on job effects (like job_knight_effect_desc)
+
+KNIGHT ACOT MOD
+	base game
+		research
+			4 each
+		bureaucrat
+			4	
+
+		lord commander
+			5 amenities
+			6 naval cap
+			4/8/12/16 unity
+			0/2/4/6 research
+		knight
+			4 naval cap
+			2 defense armies
+			3/6/9/12 unity
+			2/4/6/8/10 research
+			0/5 Amenities
+			0/1.5% empire alloys
+		squire
+			2 amenities
+			2% knights output
+	ACOT
+		research
+			25 each
+		unity
+			15 each
+
+		delta knight
+			10 naval cap
+			4 defense armies
+			12/24/36/48 unity
+			15/30/45/60/75 research
+			0/10 Amenities
+			0/2% empire alloys
+	AOT AE
+		research
+			40 each
+		unity
+			30 each
+
+		alpha knight
+			20 naval cap
+			8 defense armies
+			24x unity
+			30x research
+			0/20 Amenities
+			0/2.5% empire alloys
+	AOT PHANON
+		research
+			80 each
+		unity
+			60 each
+	AOT STELLARITE
+		research
+			160 each
+		unity
+			120 each

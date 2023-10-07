@@ -1,0 +1,856 @@
+######
+# SQUIRE JOBS
+######
+
+delta_squire = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 4
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		knights_independent_category_produces_mult = 0.0225
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = { has_modifier = syamelles_curse_habitat }
+		}
+		planet_pop_assembly_organic_add = 0.25
+	}
+
+	resources = {
+		category = planet_squires
+		upkeep = {
+			trigger = {
+				planet = { has_modifier = syamelles_curse_habitat }
+			}
+			alloys = 1
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		factor = 1.2
+	}
+}
+
+alpha_squire = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 4
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		knights_independent_category_produces_mult = 0.025
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 8
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = { has_modifier = syamelles_curse_habitat }
+		}
+		planet_pop_assembly_organic_add = 0.25
+	}
+
+	resources = {
+		category = planet_squires
+		upkeep = {
+			trigger = {
+				planet = { has_modifier = syamelles_curse_habitat }
+			}
+			alloys = 2
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		factor = 1.2
+	}
+}
+
+phanon_squire = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 4
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		knights_independent_category_produces_mult = 0.0275
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 12
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = { has_modifier = syamelles_curse_habitat }
+		}
+		planet_pop_assembly_organic_add = 0.25
+	}
+
+	resources = {
+		category = planet_squires
+		upkeep = {
+			trigger = {
+				planet = { has_modifier = syamelles_curse_habitat }
+			}
+			alloys = 3
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		factor = 1.2
+	}
+}
+
+stellarite_squire = {
+	category = worker
+	condition_string = WORKER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 4
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	planet_modifier = {
+		knights_independent_category_produces_mult = 0.03
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 16
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			planet = { has_modifier = syamelles_curse_habitat }
+		}
+		planet_pop_assembly_organic_add = 0.25
+	}
+
+	resources = {
+		category = planet_squires
+		upkeep = {
+			trigger = {
+				planet = { has_modifier = syamelles_curse_habitat }
+			}
+			alloys = 4
+		}
+	}
+
+	weight = {
+		weight = @worker_job_weight
+		factor = 1.2
+	}
+}
+
+########
+
+delta_knight = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 12
+			mult = value:knights_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 15
+			engineering_research = 15
+			society_research = 15
+			mult = value:knights_research_output_modifier
+		}
+		upkeep = {
+			sr_dark_matter = 1
+			acot_sr_dark_energy = 1
+		}
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_defense_armies_add = 4
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+		planet_amenities_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			owner = { has_modifier = alloy_producing_knights }
+		}
+		country_alloys_produces_mult = 0.02
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		factor = 1.2
+		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+		}
+	}
+}
+
+alpha_knight = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 24
+			mult = value:knights_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 30
+			engineering_research = 30
+			society_research = 30
+			mult = value:knights_research_output_modifier
+		}
+		upkeep = {
+			sr_dark_matter = 3
+			acot_sr_dark_energy = 3
+		}
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_defense_armies_add = 8
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+		planet_amenities_add = 20
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 20
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			owner = { has_modifier = alloy_producing_knights }
+		}
+		country_alloys_produces_mult = 0.025
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		factor = 1.2
+		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+		}
+	}
+}
+
+phanon_knight = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 48
+			mult = value:knights_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 60
+			engineering_research = 60
+			society_research = 60
+			mult = value:knights_research_output_modifier
+		}
+		upkeep = {
+			aot_sr_runic_power = 12
+		}
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_defense_armies_add = 16
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+		planet_amenities_add = 30
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 30
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			owner = { has_modifier = alloy_producing_knights }
+		}
+		country_alloys_produces_mult = 0.03
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		factor = 1.2
+		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+		}
+	}
+}
+
+stellarite_knight = {
+	category = specialist
+	condition_string = SPECIALIST_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 3
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_enslaved = no
+	}
+
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 96
+			mult = value:knights_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 120
+			engineering_research = 120
+			society_research = 120
+			mult = value:knights_research_output_modifier
+		}
+		upkeep = {
+			acot_sr_stellarite = 12
+		}
+	}
+
+	triggered_pop_modifier = {
+		potential = {
+			always = yes
+		}
+		pop_defense_armies_add = 32
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_country_flag = toxoids_7090_a }
+		}
+		planet_amenities_add = 40
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 40
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			owner = { has_modifier = alloy_producing_knights }
+		}
+		country_alloys_produces_mult = 0.035
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		factor = 1.2
+		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+		}
+	}
+}
+
+#####
+
+delta_knight_commander = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 16
+			mult = value:knight_commander_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 20
+			engineering_research = 20
+			society_research = 20
+			mult = value:knight_commander_research_output_modifier
+		}
+		upkeep = {
+			sr_dark_matter = 2
+			acot_sr_dark_energy = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 10
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 15
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+			owner = { has_country_flag = toxoids_7011_a }
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+			owner = { has_country_flag = toxoids_7011_b }
+		}
+	}
+}
+
+alpha_knight_commander = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 32
+			mult = value:knight_commander_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 40
+			engineering_research = 40
+			society_research = 40
+			mult = value:knight_commander_research_output_modifier
+		}
+		upkeep = {
+			sr_dark_matter = 4
+			acot_sr_dark_energy = 4
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 20
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 30
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+			owner = { has_country_flag = toxoids_7011_a }
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+			owner = { has_country_flag = toxoids_7011_b }
+		}
+	}
+}
+
+phanon_knight_commander = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 64
+			mult = value:knight_commander_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 80
+			engineering_research = 80
+			society_research = 80
+			mult = value:knight_commander_research_output_modifier
+		}
+		upkeep = {
+			aot_sr_runic_power = 16
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 30
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 45
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+			owner = { has_country_flag = toxoids_7011_a }
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+			owner = { has_country_flag = toxoids_7011_b }
+		}
+	}
+}
+
+stellarite_knight_commander = {
+	category = ruler
+	condition_string = RULER_JOB_TRIGGER
+	building_icon = building_order_keep
+	clothes_texture_index = 1
+
+	possible_pre_triggers = {
+		has_owner = yes
+		is_enslaved = no
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+
+	possible_precalc = can_fill_ruler_job
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+	}
+
+	resources = {
+		category = knights_independent_category
+		produces = {
+			trigger = { exists = owner }
+			unity = 128
+			mult = value:knight_commander_unity_output_modifier
+		}
+		produces = {
+			trigger = { exists = owner }
+			physics_research = 160
+			engineering_research = 160
+			society_research = 160
+			mult = value:knight_commander_research_output_modifier
+		}
+		upkeep = {
+			acot_sr_stellarite = 18
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_amenities_add = 40
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+	}
+
+	triggered_country_modifier = {
+		country_naval_cap_add = 60
+		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+	}
+
+	weight = {
+		weight = @high_prio_specialist_job_weight
+		modifier = {
+			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+			owner = { has_country_flag = toxoids_7011_a }
+		}
+		modifier = {
+			mult = value:job_weights_research_modifier|JOB|researcher|
+			owner = { has_country_flag = toxoids_7011_b }
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
