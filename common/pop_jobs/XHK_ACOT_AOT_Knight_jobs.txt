@@ -620,7 +620,7 @@ delta_knight_commander = {
 	}
 
 	weight = {
-		weight = @high_prio_specialist_job_weight
+		weight = @ruler_job_weight
 		modifier = {
 			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
 			owner = { has_country_flag = toxoids_7011_a }
@@ -688,7 +688,7 @@ alpha_knight_commander = {
 	}
 
 	weight = {
-		weight = @high_prio_specialist_job_weight
+		weight = @ruler_job_weight
 		modifier = {
 			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
 			owner = { has_country_flag = toxoids_7011_a }
@@ -755,7 +755,7 @@ phanon_knight_commander = {
 	}
 
 	weight = {
-		weight = @high_prio_specialist_job_weight
+		weight = @ruler_job_weight
 		modifier = {
 			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
 			owner = { has_country_flag = toxoids_7011_a }
@@ -822,7 +822,7 @@ stellarite_knight_commander = {
 	}
 
 	weight = {
-		weight = @high_prio_specialist_job_weight
+		weight = @ruler_job_weight
 		modifier = {
 			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
 			owner = { has_country_flag = toxoids_7011_a }
