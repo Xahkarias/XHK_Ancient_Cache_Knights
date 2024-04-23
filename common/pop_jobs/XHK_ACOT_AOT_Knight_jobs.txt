@@ -26,7 +26,7 @@ delta_squire = {
 	}
 
 	planet_modifier = {
-		knights_independent_category_produces_mult = 0.0225
+		planet_knights_produces_mult = 0.0225
 	}
 
 	triggered_planet_modifier = {
@@ -84,7 +84,7 @@ alpha_squire = {
 	}
 
 	planet_modifier = {
-		knights_independent_category_produces_mult = 0.025
+		planet_knights_produces_mult = 0.025
 	}
 
 	triggered_planet_modifier = {
@@ -142,7 +142,7 @@ phanon_squire = {
 	}
 
 	planet_modifier = {
-		knights_independent_category_produces_mult = 0.0275
+		planet_knights_produces_mult = 0.0275
 	}
 
 	triggered_planet_modifier = {
@@ -200,7 +200,7 @@ stellarite_squire = {
 	}
 
 	planet_modifier = {
-		knights_independent_category_produces_mult = 0.03
+		planet_knights_produces_mult = 0.03
 	}
 
 	triggered_planet_modifier = {
@@ -258,7 +258,7 @@ delta_knight = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 12
@@ -272,17 +272,23 @@ delta_knight = {
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
-			sr_dark_matter = 1
 			acot_sr_dark_energy = 1
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = {
+						has_modifier = luminous_blades
+					}
+				}
+			}
+		}
+		upkeep = {
+			sr_dark_matter = 1
 		}
 	}
 
 	triggered_pop_modifier = {
-		potential = {
-			always = yes
-		}
 		pop_defense_armies_add = 4
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	triggered_planet_modifier = {
@@ -290,31 +296,19 @@ delta_knight = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
 		planet_amenities_add = 10
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 10
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			owner = { has_modifier = alloy_producing_knights }
-		}
-		country_alloys_produces_mult = 0.02
 	}
 
 	weight = {
 		weight = @high_prio_specialist_job_weight
 		factor = 1.2
 		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-		}
+		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|researcher|
 	}
 }
 
@@ -340,7 +334,7 @@ alpha_knight = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 24
@@ -354,17 +348,25 @@ alpha_knight = {
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
-			sr_dark_matter = 3
-			acot_sr_dark_energy = 3
+			sr_dark_matter = 2
+			acot_sr_dark_energy = 2
+		}
+		upkeep = {
+			sr_dark_matter = 1
+			acot_sr_dark_energy = 1
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = {
+						has_modifier = luminous_blades
+					}
+				}
+			}
 		}
 	}
 
 	triggered_pop_modifier = {
-		potential = {
-			always = yes
-		}
 		pop_defense_armies_add = 8
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	triggered_planet_modifier = {
@@ -372,31 +374,19 @@ alpha_knight = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
 		planet_amenities_add = 20
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 20
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			owner = { has_modifier = alloy_producing_knights }
-		}
-		country_alloys_produces_mult = 0.025
 	}
 
 	weight = {
 		weight = @high_prio_specialist_job_weight
 		factor = 1.2
 		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-		}
+		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|researcher|
 	}
 }
 
@@ -422,7 +412,7 @@ phanon_knight = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 48
@@ -436,16 +426,23 @@ phanon_knight = {
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
-			aot_sr_runic_power = 12
+			aot_sr_runic_power = 8
+		}
+		upkeep = {
+			aot_sr_runic_power = 4
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = {
+						has_modifier = luminous_blades
+					}
+				}
+			}
 		}
 	}
 
 	triggered_pop_modifier = {
-		potential = {
-			always = yes
-		}
 		pop_defense_armies_add = 12
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	triggered_planet_modifier = {
@@ -453,31 +450,19 @@ phanon_knight = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
 		planet_amenities_add = 30
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 30
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			owner = { has_modifier = alloy_producing_knights }
-		}
-		country_alloys_produces_mult = 0.03
 	}
 
 	weight = {
 		weight = @high_prio_specialist_job_weight
 		factor = 1.2
 		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-		}
+		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|researcher|
 	}
 }
 
@@ -503,7 +488,7 @@ stellarite_knight = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 96
@@ -517,16 +502,23 @@ stellarite_knight = {
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
-			acot_sr_stellarite = 12
+			acot_sr_stellarite = 8
+		}
+		upkeep = {
+			acot_sr_stellarite = 4
+			trigger = {
+				exists = owner
+				owner = {
+					NOT = {
+						has_modifier = luminous_blades
+					}
+				}
+			}
 		}
 	}
 
 	triggered_pop_modifier = {
-		potential = {
-			always = yes
-		}
 		pop_defense_armies_add = 16
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	triggered_planet_modifier = {
@@ -534,31 +526,19 @@ stellarite_knight = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
 		planet_amenities_add = 40
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
+		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 40
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
-	}
-
-	triggered_country_modifier = {
-		potential = {
-			owner = { has_modifier = alloy_producing_knights }
-		}
-		country_alloys_produces_mult = 0.035
 	}
 
 	weight = {
 		weight = @high_prio_specialist_job_weight
 		factor = 1.2
 		add = 5 #Somehow pops preferred to work as squires than as knights. No more.
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-		}
+		mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|researcher|
 	}
 }
 
@@ -587,7 +567,7 @@ delta_knight_commander = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 16
@@ -616,19 +596,12 @@ delta_knight_commander = {
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 15
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	weight = {
-		weight = @ruler_job_weight
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-			owner = { has_country_flag = toxoids_7011_a }
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-			owner = { has_country_flag = toxoids_7011_b }
-		}
+		weight = @high_prio_specialist_job_weight
+		mult = value:job_weights_modifier|JOB|knight_commander|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|knight_commander|
 	}
 }
 
@@ -655,7 +628,7 @@ alpha_knight_commander = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 32
@@ -684,19 +657,12 @@ alpha_knight_commander = {
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 30
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	weight = {
-		weight = @ruler_job_weight
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-			owner = { has_country_flag = toxoids_7011_a }
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-			owner = { has_country_flag = toxoids_7011_b }
-		}
+		weight = @high_prio_specialist_job_weight
+		mult = value:job_weights_modifier|JOB|knight_commander|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|knight_commander|
 	}
 }
 
@@ -723,7 +689,7 @@ phanon_knight_commander = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 64
@@ -751,19 +717,12 @@ phanon_knight_commander = {
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 45
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	weight = {
-		weight = @ruler_job_weight
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-			owner = { has_country_flag = toxoids_7011_a }
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-			owner = { has_country_flag = toxoids_7011_b }
-		}
+		weight = @high_prio_specialist_job_weight
+		mult = value:job_weights_modifier|JOB|knight_commander|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|knight_commander|
 	}
 }
 
@@ -790,7 +749,7 @@ stellarite_knight_commander = {
 	}
 
 	resources = {
-		category = knights_independent_category
+		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
 			unity = 128
@@ -818,19 +777,12 @@ stellarite_knight_commander = {
 
 	triggered_country_modifier = {
 		country_naval_cap_add = 60
-		mult = value:scripted_modifier_mult|MODIFIER|knights_independent_category_produces_mult|
 	}
 
 	weight = {
-		weight = @ruler_job_weight
-		modifier = {
-			mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
-			owner = { has_country_flag = toxoids_7011_a }
-		}
-		modifier = {
-			mult = value:job_weights_research_modifier|JOB|researcher|
-			owner = { has_country_flag = toxoids_7011_b }
-		}
+		weight = @high_prio_specialist_job_weight
+		mult = value:job_weights_modifier|JOB|knight_commander|RESOURCE|unity|
+		mult = value:job_weights_research_modifier|JOB|knight_commander|
 	}
 }
 
