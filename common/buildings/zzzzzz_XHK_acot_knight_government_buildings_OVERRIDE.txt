@@ -25,14 +25,14 @@ building_order_keep = {
 	}
 
 	destroy_trigger = {
-		OR = {
-			NOT = { exists = owner }
-			NOT = {
-				OR = {
-					owner = {has_origin = origin_toxic_knights}
-					owner = {has_country_flag = decision_toxic_knights}
-				}
-			}
+		NAND = {
+		   exists = owner
+		   owner = {
+			  OR = {
+				 has_origin = origin_toxic_knights
+				 has_country_flag = decision_toxic_knights
+			  }
+		   }
 		}
 	}
 
@@ -65,8 +65,8 @@ building_order_keep = {
 		}
 		modifier = { 
 			job_knight_commander_add = 1
-			job_squire_add = 1
-			job_knight_add = 5
+			job_squire_add = 2
+			job_knight_add = 3
 			job_knight_per_pop = 0.05
 		}
 	}
@@ -101,8 +101,8 @@ building_order_keep = {
 		}
 		modifier = { 
 			job_delta_knight_commander_add = 1
-			job_delta_squire_add = 1
-			job_delta_knight_add = 5
+			job_delta_squire_add = 2
+			job_delta_knight_add = 3
 			job_delta_knight_per_pop = 0.05
 		}
 	}
@@ -145,8 +145,8 @@ building_order_keep = {
 		}
 		modifier = { 
 			job_alpha_knight_commander_add = 1
-			job_alpha_squire_add = 1
-			job_alpha_knight_add = 5
+			job_alpha_squire_add = 2
+			job_alpha_knight_add = 3
 			job_alpha_knight_per_pop = 0.05
 		}
 	}
@@ -189,8 +189,8 @@ building_order_keep = {
 		}
 		modifier = { 
 			job_phanon_knight_commander_add = 1
-			job_phanon_squire_add = 1
-			job_phanon_knight_add = 5
+			job_phanon_squire_add = 2
+			job_phanon_knight_add = 3
 			job_phanon_knight_per_pop = 0.05
 		}
 	}
@@ -229,8 +229,8 @@ building_order_keep = {
 		}
 		modifier = { 
 			job_stellarite_knight_commander_add = 1
-			job_stellarite_squire_add = 1
-			job_stellarite_knight_add = 5
+			job_stellarite_squire_add = 2
+			job_stellarite_knight_add = 3
 			job_stellarite_knight_per_pop = 0.05
 		}
 	}
@@ -290,14 +290,14 @@ building_order_castle = {
 	category = government
 
 	destroy_trigger = {
-		OR = {
-			NOT = { exists = owner }
-			NOT = {
+		NAND = {
+		   	exists = owner
+		   	owner = {
 				OR = {
-					owner = {has_origin = origin_toxic_knights}
-					owner = {has_country_flag = decision_toxic_knights}
+					has_origin = origin_toxic_knights
+				 	has_country_flag = decision_toxic_knights
 				}
-			}
+		   	}
 		}
 	}
 
@@ -312,7 +312,7 @@ building_order_castle = {
 			has_enigmatic_capital = no
 		}
 		modifier = { 
-			job_squire_add = 1
+			job_squire_add = 2
 			job_knight_add = 1
 		}
 	}
@@ -337,7 +337,7 @@ building_order_castle = {
 			}
 		}
 		modifier = { 
-			job_delta_squire_add = 1
+			job_delta_squire_add = 2
 			job_delta_knight_add = 1
 		}
 	}
@@ -366,7 +366,7 @@ building_order_castle = {
 			}
 		}
 		modifier = { 
-			job_alpha_squire_add = 1
+			job_alpha_squire_add = 2
 			job_alpha_knight_add = 1
 		}
 	}
@@ -395,7 +395,7 @@ building_order_castle = {
 			}
 		}
 		modifier = { 
-			job_phanon_squire_add = 1
+			job_phanon_squire_add = 2
 			job_phanon_knight_add = 1
 		}
 	}
@@ -420,7 +420,7 @@ building_order_castle = {
 			has_stellarite_capital = yes
 		}
 		modifier = { 
-			job_stellarite_squire_add = 1
+			job_stellarite_squire_add = 2
 			job_stellarite_knight_add = 1
 		}
 	}
