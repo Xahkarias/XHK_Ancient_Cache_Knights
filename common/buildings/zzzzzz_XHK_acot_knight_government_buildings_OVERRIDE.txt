@@ -94,9 +94,9 @@ building_order_keep = {
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
 			}
 		}
 		modifier = { 
@@ -111,9 +111,9 @@ building_order_keep = {
 		potential = {
 			owner = { has_country_flag = toxoids_7060_A }
 			OR = {
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
 			}
 		}
 		modifier = { job_delta_knight_add = 1 }
@@ -123,9 +123,9 @@ building_order_keep = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
 			OR = {
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
 			}
 		}
 		modifier = {
@@ -138,9 +138,9 @@ building_order_keep = {
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
 			}
 		}
 		modifier = { 
@@ -155,9 +155,9 @@ building_order_keep = {
 		potential = {
 			owner = { has_country_flag = toxoids_7060_A }
 			OR = {
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
 			}
 		}
 		modifier = { job_alpha_knight_add = 1 }
@@ -167,9 +167,9 @@ building_order_keep = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
 			OR = {
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
 			}
 		}
 		modifier = {
@@ -331,9 +331,9 @@ building_order_castle = {
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
 			}
 		}
 		modifier = { 
@@ -346,9 +346,9 @@ building_order_castle = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
 			OR = {
-				has_building = building_dm_ancient_hive_cluster
-				has_building = building_dm_ancient_control_center
-				has_building = building_dm_ancient_palace
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
 			}
 		}
 		modifier = {
@@ -360,9 +360,9 @@ building_order_castle = {
 	triggered_planet_modifier = {
 		potential = {
 			OR = {
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
 			}
 		}
 		modifier = { 
@@ -375,9 +375,9 @@ building_order_castle = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
 			OR = {
-				has_building = building_ae_ancient_hive_cluster
-				has_building = building_ae_ancient_control_center
-				has_building = building_ae_ancient_palace
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
 			}
 		}
 		modifier = {

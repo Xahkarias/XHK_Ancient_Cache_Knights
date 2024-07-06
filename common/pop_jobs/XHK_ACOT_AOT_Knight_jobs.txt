@@ -261,14 +261,14 @@ delta_knight = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 12
+			unity = 9
 			mult = value:knights_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 15
-			engineering_research = 15
-			society_research = 15
+			physics_research = 8
+			engineering_research = 8
+			society_research = 8
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
@@ -284,11 +284,12 @@ delta_knight = {
 		}
 		upkeep = {
 			sr_dark_matter = 1
+			alloys = 1
 		}
 	}
 
 	triggered_pop_modifier = {
-		pop_defense_armies_add = 4
+		pop_defense_armies_add = 3
 	}
 
 	triggered_planet_modifier = {
@@ -300,7 +301,7 @@ delta_knight = {
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 10
+		country_naval_cap_add = 8
 	}
 
 	weight = {
@@ -337,19 +338,20 @@ alpha_knight = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 24
+			unity = 18
 			mult = value:knights_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 30
-			engineering_research = 30
-			society_research = 30
+			physics_research = 16
+			engineering_research = 16
+			society_research = 16
 			mult = value:knights_research_output_modifier
 		}
 		upkeep = {
 			sr_dark_matter = 2
 			acot_sr_dark_energy = 2
+			alloys = 2
 		}
 		upkeep = {
 			sr_dark_matter = 1
@@ -366,19 +368,19 @@ alpha_knight = {
 	}
 
 	triggered_pop_modifier = {
-		pop_defense_armies_add = 8
+		pop_defense_armies_add = 4
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
-		planet_amenities_add = 20
+		planet_amenities_add = 12
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 20
+		country_naval_cap_add = 16
 	}
 
 	weight = {
@@ -570,14 +572,14 @@ delta_knight_commander = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 16
+			unity = 12
 			mult = value:knight_commander_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 20
-			engineering_research = 20
-			society_research = 20
+			physics_research = 8
+			engineering_research = 8
+			society_research = 8
 			mult = value:knight_commander_research_output_modifier
 		}
 		upkeep = {
@@ -590,12 +592,12 @@ delta_knight_commander = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 10
+		planet_amenities_add = 12
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 15
+		country_naval_cap_add = 10
 	}
 
 	weight = {
@@ -631,14 +633,14 @@ alpha_knight_commander = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 32
+			unity = 24
 			mult = value:knight_commander_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 40
-			engineering_research = 40
-			society_research = 40
+			physics_research = 16
+			engineering_research = 16
+			society_research = 16
 			mult = value:knight_commander_research_output_modifier
 		}
 		upkeep = {
@@ -651,12 +653,12 @@ alpha_knight_commander = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 20
+		planet_amenities_add = 24
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 30
+		country_naval_cap_add = 20
 	}
 
 	weight = {
