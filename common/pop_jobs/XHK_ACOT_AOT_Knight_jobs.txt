@@ -319,7 +319,7 @@ delta_knight = {
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 8
+		country_naval_cap_add = 6
 	}
 
 	weight = {
@@ -405,12 +405,12 @@ alpha_knight = {
 		potential = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
-		planet_amenities_add = 12
+		planet_amenities_add = 15
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 16
+		country_naval_cap_add = 8
 	}
 
 	weight = {
@@ -449,14 +449,14 @@ phanon_knight = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 48
+			unity = 30
 			mult = value:knights_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 60
-			engineering_research = 60
-			society_research = 60
+			physics_research = 25
+			engineering_research = 25
+			society_research = 25
 			mult = value:knights_research_output_modifier
 		}
 		produces = {
@@ -486,19 +486,19 @@ phanon_knight = {
 	}
 
 	triggered_pop_modifier = {
-		pop_defense_armies_add = 12
+		pop_defense_armies_add = 5
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
-		planet_amenities_add = 30
+		planet_amenities_add = 20
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 30
+		country_naval_cap_add = 10
 	}
 
 	weight = {
@@ -537,14 +537,14 @@ stellarite_knight = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 96
+			unity = 120
 			mult = value:knights_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 120
-			engineering_research = 120
-			society_research = 120
+			physics_research = 75
+			engineering_research = 75
+			society_research = 75
 			mult = value:knights_research_output_modifier
 		}
 		produces = {
@@ -574,19 +574,19 @@ stellarite_knight = {
 	}
 
 	triggered_pop_modifier = {
-		pop_defense_armies_add = 16
+		pop_defense_armies_add = 6
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			owner = { has_country_flag = toxoids_7090_a }
 		}
-		planet_amenities_add = 40
+		planet_amenities_add = 25
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 40
+		country_naval_cap_add = 12
 	}
 
 	weight = {
@@ -628,7 +628,7 @@ delta_knight_commander = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 12
+			unity = 10
 			mult = value:knight_commander_unity_output_modifier
 		}
 		produces = {
@@ -774,14 +774,14 @@ phanon_knight_commander = {
 		category = planet_knights
 		produces = {
 			trigger = { exists = owner }
-			unity = 64
+			unity = 36
 			mult = value:knight_commander_unity_output_modifier
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 80
-			engineering_research = 80
-			society_research = 80
+			physics_research = 25
+			engineering_research = 25
+			society_research = 25
 			mult = value:knight_commander_research_output_modifier
 		}
 		produces = {
@@ -803,12 +803,12 @@ phanon_knight_commander = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 30
+		planet_amenities_add = 36
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 45
+		country_naval_cap_add = 40
 	}
 
 	weight = {
@@ -851,9 +851,9 @@ stellarite_knight_commander = {
 		}
 		produces = {
 			trigger = { exists = owner }
-			physics_research = 160
-			engineering_research = 160
-			society_research = 160
+			physics_research = 75
+			engineering_research = 75
+			society_research = 75
 			mult = value:knight_commander_research_output_modifier
 		}
 		produces = {
@@ -875,12 +875,12 @@ stellarite_knight_commander = {
 		potential = {
 			always = yes
 		}
-		planet_amenities_add = 40
+		planet_amenities_add = 48
 		mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
 	}
 
 	triggered_country_modifier = {
-		country_naval_cap_add = 60
+		country_naval_cap_add = 70
 	}
 
 	weight = {
