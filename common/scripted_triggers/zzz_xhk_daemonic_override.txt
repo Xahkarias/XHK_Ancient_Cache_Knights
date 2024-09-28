@@ -1,0 +1,7 @@
+# copied from daemonic incursion, used to deal with deposit override 
+has_toxic_knights_origin = {
+	OR = { 
+		has_origin = origin_toxic_knights 
+		has_country_flag = decision_toxic_knights 
+	}
+}
