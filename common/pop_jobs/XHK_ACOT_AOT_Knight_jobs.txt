@@ -25,8 +25,12 @@ delta_squire = {
 		}
 	}
 
+	pop_modifier = {
+		pop_defense_armies_add = 1
+	}
+
 	planet_modifier = {
-		planet_knights_produces_mult = 0.0225
+		planet_knights_produces_mult = 0.0275
 	}
 
 	triggered_planet_modifier = {
@@ -41,7 +45,7 @@ delta_squire = {
 		potential = {
 			planet = { has_modifier = syamelles_curse_habitat }
 		}
-		planet_pop_assembly_organic_add = 0.25
+		planet_pop_assembly_organic_add = 0.275
 	}
 
 	resources = {
@@ -85,8 +89,12 @@ alpha_squire = {
 		}
 	}
 
+	pop_modifier = {
+		pop_defense_armies_add = 2
+	}
+
 	planet_modifier = {
-		planet_knights_produces_mult = 0.025
+		planet_knights_produces_mult = 0.03
 	}
 
 	triggered_planet_modifier = {
@@ -101,7 +109,7 @@ alpha_squire = {
 		potential = {
 			planet = { has_modifier = syamelles_curse_habitat }
 		}
-		planet_pop_assembly_organic_add = 0.25
+		planet_pop_assembly_organic_add = 0.3
 	}
 
 	resources = {
@@ -110,7 +118,7 @@ alpha_squire = {
 			trigger = {
 				planet = { has_modifier = syamelles_curse_habitat }
 			}
-			alloys = 2
+			alloys = 1
 		}
 	}
 
@@ -145,8 +153,12 @@ phanon_squire = {
 		}
 	}
 
+	pop_modifier = {
+		pop_defense_armies_add = 2
+	}
+
 	planet_modifier = {
-		planet_knights_produces_mult = 0.0275
+		planet_knights_produces_mult = 0.0325
 	}
 
 	triggered_planet_modifier = {
@@ -161,7 +173,7 @@ phanon_squire = {
 		potential = {
 			planet = { has_modifier = syamelles_curse_habitat }
 		}
-		planet_pop_assembly_organic_add = 0.25
+		planet_pop_assembly_organic_add = 0.325
 	}
 
 	resources = {
@@ -170,7 +182,7 @@ phanon_squire = {
 			trigger = {
 				planet = { has_modifier = syamelles_curse_habitat }
 			}
-			alloys = 3
+			alloys = 1
 		}
 	}
 
@@ -205,8 +217,12 @@ stellarite_squire = {
 		}
 	}
 
+	pop_modifier = {
+		pop_defense_armies_add = 2
+	}
+
 	planet_modifier = {
-		planet_knights_produces_mult = 0.03
+		planet_knights_produces_mult = 0.035
 	}
 
 	triggered_planet_modifier = {
@@ -221,7 +237,7 @@ stellarite_squire = {
 		potential = {
 			planet = { has_modifier = syamelles_curse_habitat }
 		}
-		planet_pop_assembly_organic_add = 0.25
+		planet_pop_assembly_organic_add = 0.35
 	}
 
 	resources = {
@@ -230,7 +246,7 @@ stellarite_squire = {
 			trigger = {
 				planet = { has_modifier = syamelles_curse_habitat }
 			}
-			alloys = 4
+			alloys = 1
 		}
 	}
 
