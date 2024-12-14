@@ -78,3 +78,20 @@ job_stellarite_knight_commander_plural: "Nova Grand Masters"
 job_stellarite_knight_commander_desc: "This grand master wields forces so powerful, a fallen empire of old would fall to a finger flick."
 mod_job_stellarite_knight_commander_add: "$job_stellarite_knight_commander$"
 
+### habitat districts
+
+district_xhk_dm_hab_knights: "Shadow Stronghold"
+district_xhk_dm_hab_knights_plural: "Shadow Strongholds"
+district_xhk_dm_hab_knights_desc: "These new strongholds, implementing prototype dark matter technology, shall arm our knights for a new age!"
+
+district_xhk_ae_hab_knights: "Alpha Fortress"
+district_xhk_ae_hab_knights_plural: "Alpha Fortresses"
+district_xhk_ae_hab_knights_desc: "The Order shall defeat everything that threatens the nation, even the decrepit corpses of the fallen ones!"
+
+district_xhk_pe_hab_knights: "§RRunic Bastion§!"
+district_xhk_pe_hab_knights_plural: "§RRunic Bastions§!"
+district_xhk_pe_hab_knights_desc: "$phanon_classified$"
+
+district_xhk_se_hab_knights: "§HNova Citadel§!"
+district_xhk_se_hab_knights_plural: "§HNova Citadels§!"
+district_xhk_se_hab_knights_desc: "§HOur citadels wield the power of the stars themselves! We shall sunder even the nameless gods above!§!"

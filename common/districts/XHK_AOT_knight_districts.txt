@@ -1,0 +1,256 @@
+@hab_cost = 1000
+@hab_cost_dm = 500
+@hab_cost_de = 500
+@hab_cost_stellarite = 500
+@hab_maintenance = 2
+
+district_xhk_dm_hab_knights = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		uses_district_set = dm_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	potential = {
+		uses_district_set = dm_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	destroy_trigger = {
+		NAND = {
+		   	exists = owner
+		   	owner = {
+				OR = {
+					has_origin = origin_toxic_knights
+					has_country_flag = decision_toxic_knights
+				}
+			}
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @hab_cost
+			sr_dark_matter = @hab_cost_dm
+			acot_sr_dark_energy = @hab_cost_de
+		}
+		upkeep = {
+			energy = @hab_maintenance
+		}
+	}
+	convert_to = {
+		district_dm_hab_housing
+	}
+	planet_modifier = {
+		planet_housing_add = 12
+		planet_max_buildings_add = 1
+		job_delta_squire_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		job_delta_squire_add = 1
+	}
+
+}
+
+district_xhk_ae_hab_knights = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		uses_district_set = ae_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	potential = {
+		uses_district_set = ae_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	destroy_trigger = {
+		NAND = {
+		   	exists = owner
+		   	owner = {
+				OR = {
+					has_origin = origin_toxic_knights
+					has_country_flag = decision_toxic_knights
+				}
+			}
+		}
+	}
+	convert_to = {
+		district_ae_hab_housing
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @hab_cost
+			sr_dark_matter = @hab_cost_dm
+			acot_sr_dark_energy = @hab_cost_de
+		}
+		upkeep = {
+			energy = @hab_maintenance
+		}
+	}
+	planet_modifier = {
+		planet_housing_add = 15
+		planet_max_buildings_add = 1
+		job_alpha_squire_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		job_alpha_squire_add = 1
+	}
+}
+
+district_xhk_pe_hab_knights = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		uses_district_set = phanon_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	potential = {
+		uses_district_set = phanon_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	destroy_trigger = {
+		NAND = {
+		   	exists = owner
+		   	owner = {
+				OR = {
+					has_origin = origin_toxic_knights
+					has_country_flag = decision_toxic_knights
+				}
+			}
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @hab_cost
+			aot_sr_runic_power = @hab_cost_stellarite
+		}
+		upkeep = {
+			energy = @hab_maintenance
+		}
+	}
+	convert_to = {
+		district_hab_phanon_housing
+	}
+	planet_modifier = {
+		planet_housing_add = 16
+		planet_max_buildings_add = 1
+		job_phanon_squire_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		job_phanon_squire_add = 1
+	}
+}
+
+district_xhk_se_hab_knights = {
+	base_buildtime = 240
+	is_capped_by_modifier = no
+	show_on_uncolonized = {
+		uses_district_set = sigma_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	potential = {
+		uses_district_set = sigma_habitat
+		exists = owner
+		owner = { 
+			OR = {
+				has_origin = origin_toxic_knights
+				has_country_flag = decision_toxic_knights
+			}
+		}
+	}
+	destroy_trigger = {
+		NAND = {
+		   	exists = owner
+		   	owner = {
+				OR = {
+					has_origin = origin_toxic_knights
+					has_country_flag = decision_toxic_knights
+				}
+			}
+		}
+	}
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @hab_cost
+			acot_sr_stellarite = @hab_cost_stellarite
+		}
+		upkeep = {
+			energy = @hab_maintenance
+		}
+	}
+	convert_to = {
+		district_hab_stellarite_housing
+	}
+	planet_modifier = {
+		planet_housing_add = 18
+		planet_max_buildings_add = 1
+		job_stellarite_squire_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = {
+				is_void_dweller_empire = yes
+			}
+		}
+		job_stellarite_squire_add = 1
+	}
+}
