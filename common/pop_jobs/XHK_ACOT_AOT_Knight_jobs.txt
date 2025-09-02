@@ -18,6 +18,9 @@ delta_squire = {
 			pop_knight_bonus_workforce_mult = 0.0275
 			planet_knights_upkeep_mult = 0.005
 			pop_knight_commander_bonus_workforce_mult = 0.015
+			pop_delta_knight_bonus_workforce_mult = 0.0275
+			planet_delta_knights_upkeep_mult = 0.005
+			pop_delta_knight_commander_bonus_workforce_mult = 0.015
 		"
 		
 	}
@@ -64,6 +67,9 @@ alpha_squire = {
 			pop_knight_bonus_workforce_mult = 0.03
 			planet_knights_upkeep_mult = 0.005
 			pop_knight_commander_bonus_workforce_mult = 0.0175
+			pop_alpha_knight_bonus_workforce_mult = 0.03
+			planet_alpha_knights_upkeep_mult = 0.005
+			pop_alpha_knight_commander_bonus_workforce_mult = 0.0175
 		"
 		
 	}
@@ -109,6 +115,9 @@ phanon_squire = {
 			pop_knight_bonus_workforce_mult = 0.0325
 			planet_knights_upkeep_mult = 0.005
 			pop_knight_commander_bonus_workforce_mult = 0.02
+			pop_phanon_knight_bonus_workforce_mult = 0.0325
+			planet_phanon_knights_upkeep_mult = 0.005
+			pop_phanon_knight_commander_bonus_workforce_mult = 0.02
 		"
 	}
 	swappable_data = {
@@ -153,6 +162,9 @@ stellarite_squire = {
 			pop_knight_bonus_workforce_mult = 0.035
 			planet_knights_upkeep_mult = 0.005
 			pop_knight_commander_bonus_workforce_mult = 0.0225
+			pop_stellarite_knight_bonus_workforce_mult = 0.035
+			planet_stellarite_knights_upkeep_mult = 0.005
+			pop_stellarite_knight_commander_bonus_workforce_mult = 0.0225
 		"
 	}
 	swappable_data = {

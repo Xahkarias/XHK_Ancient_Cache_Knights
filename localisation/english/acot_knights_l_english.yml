@@ -34,6 +34,7 @@ job_delta_knight_desc: "Knights trained in the cutting edge of enigmatic weaponr
 mod_job_delta_knight_add: "$job_delta_knight$"
 mod_job_delta_knight_per_pop: "§G+1§! $job_delta_knight$ Job per $VALUE$ Pops"
 mod_job_delta_knight_per_pop_short: "\n§G+1§! £job_delta_knight£ per $VALUE$ £pop£" 
+mod_pop_delta_knight_bonus_workforce_mult: "Job Efficiency for $job_delta_knight_plural$"
 
 job_alpha_knight: "Alpha Knight"
 job_alpha_knight_plural: "Alpha Knights"
@@ -41,6 +42,7 @@ job_alpha_knight_desc: "With the perfected enigmatic weapons in their hands, our
 mod_job_alpha_knight_add: "$job_alpha_knight$"
 mod_job_alpha_knight_per_pop: "§G+1§! $job_alpha_knight$ Job per $VALUE$ Pops"
 mod_job_alpha_knight_per_pop_short: "\n§G+1§! £job_alpha_knight£ per $VALUE$ £pop£" 
+mod_pop_alpha_knight_bonus_workforce_mult: "Job Efficiency for $job_alpha_knight_plural$"
 
 job_phanon_knight: "Runic Knight"
 job_phanon_knight_plural: "Runic Knights"
@@ -48,6 +50,7 @@ job_phanon_knight_desc: "Development of £aot_sr_runic_power£ Runic Power has p
 mod_job_phanon_knight_add: "$job_phanon_knight$"
 mod_job_phanon_knight_per_pop: "§G+1§! $job_phanon_knight$ Job per $VALUE$ Pops"
 mod_job_phanon_knight_per_pop_short: "\n§G+1§! £job_phanon_knight£ per $VALUE$ £pop£" 
+mod_pop_phanon_knight_bonus_workforce_mult: "Job Efficiency for $job_phanon_knight_plural$"
 
 job_stellarite_knight: "Nova Knight"
 job_stellarite_knight_plural: "Nova Knights"
@@ -55,6 +58,7 @@ job_stellarite_knight_desc: "With their gene-wrought strength and stellarite-bon
 mod_job_stellarite_knight_add: "$job_stellarite_knight$"
 mod_job_stellarite_knight_per_pop: "§G+1§! $job_stellarite_knight$ Job per $VALUE$ Pops"
 mod_job_stellarite_knight_per_pop_short: "\n§G+1§! £job_stellarite_knight£ per $VALUE$ £pop£" 
+mod_pop_stellarite_knight_bonus_workforce_mult: "Job Efficiency for $job_stellarite_knight_plural$"
 
 #####
 
@@ -62,21 +66,25 @@ job_delta_knight_commander: "Shadow Grand Master"
 job_delta_knight_commander_plural: "Shadow Grand Masters"
 job_delta_knight_commander_desc: "Ruling the knight order, this commander has updated his workflow with prototype enigmatic technology."
 mod_job_delta_knight_commander_add: "$job_delta_knight_commander$"
+mod_pop_delta_knight_commander_bonus_workforce_mult: "Job Efficiency for $job_delta_knight_commander_plural$"
  
 job_alpha_knight_commander: "Alpha Grand Master"
 job_alpha_knight_commander_plural: "Alpha Grand Masters"
 job_alpha_knight_commander_desc: "While steeped in the machinations of enigmatic bureacracy, this grand master still keeps up to date with the newest in enigmatic tactics."
 mod_job_alpha_knight_commander_add: "$job_alpha_knight_commander$"
+mod_pop_alpha_knight_commander_bonus_workforce_mult: "Job Efficiency for $job_alpha_knight_commander_plural$"
 
 job_phanon_knight_commander: "Runic Grand Master"
 job_phanon_knight_commander_plural: "Runic Grand Masters"
 job_phanon_knight_commander_desc: "A grand master's duties are never done, especially when they must manage the logistics for all runic technology in the order."
 mod_job_phanon_knight_commander_add: "$job_phanon_knight_commander$"
+mod_pop_phanon_knight_commander_bonus_workforce_mult: "Job Efficiency for $job_phanon_knight_commander_plural$"
 
 job_stellarite_knight_commander: "Nova Grand Master"
 job_stellarite_knight_commander_plural: "Nova Grand Masters"
 job_stellarite_knight_commander_desc: "This grand master wields forces so powerful, a fallen empire of old would fall to a finger flick."
 mod_job_stellarite_knight_commander_add: "$job_stellarite_knight_commander$"
+mod_pop_stellarite_knight_commander_bonus_workforce_mult: "Job Efficiency for $job_stellarite_knight_commander_plural$"
 
 ### habitat districts
 
