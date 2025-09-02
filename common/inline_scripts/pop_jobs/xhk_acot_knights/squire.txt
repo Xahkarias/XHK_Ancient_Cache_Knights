@@ -15,20 +15,6 @@ possible_pre_triggers = {
 
 possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
 
-possible = {
-	hidden_trigger = { exists = owner }
-	owner = {
-		is_gestalt = no
-	}
-	exists = planet
-	planet = {
-		OR = {
-			has_active_building = building_order_keep
-			has_active_building = building_order_castle
-		}
-	}
-}
-
 triggered_planet_modifier = {
 	$PLANET_MOD$
 }

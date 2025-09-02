@@ -27,6 +27,25 @@ delta_squire = {
 			building_icon = building_order_keep
 		}
 	}
+
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		exists = planet
+		planet = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+			OR = {
+				has_building = building_acot_dm_ancient_hive_cluster
+				has_building = building_acot_dm_ancient_control_center
+				has_building = building_acot_dm_ancient_palace
+			}
+		}
+	}
 }
 
 alpha_squire = {
@@ -52,6 +71,24 @@ alpha_squire = {
 		default = {
 			condition_string = WORKER_JOB_TRIGGER
 			building_icon = building_order_keep
+		}
+	}
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		exists = planet
+		planet = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+			OR = {
+				has_building = building_acot_ae_ancient_hive_cluster
+				has_building = building_acot_ae_ancient_control_center
+				has_building = building_acot_ae_ancient_palace
+			}
 		}
 	}
 }
@@ -80,6 +117,24 @@ phanon_squire = {
 			building_icon = building_order_keep
 		}
 	}
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		exists = planet
+		planet = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+			OR = {
+				has_building = building_phanon_hive_cluster
+				has_building = building_phanon_control_center
+				has_building = building_phanon_palace
+			}
+		}
+	}
 }
 
 stellarite_squire = {
@@ -104,6 +159,21 @@ stellarite_squire = {
 		default = {
 			condition_string = WORKER_JOB_TRIGGER
 			building_icon = building_order_keep
+		}
+	}
+	possible = {
+		hidden_trigger = { exists = owner }
+		owner = {
+			is_gestalt = no
+		}
+		exists = planet
+		planet = {
+			OR = {
+				has_active_building = building_order_keep
+				has_active_building = building_order_castle
+			}
+			has_stellarite_capital = yes
+			has_global_flag = has_aot_mod
 		}
 	}
 }

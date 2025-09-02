@@ -1,0 +1,11 @@
+# OVERRIDES LIST:
+
+### Buildings:
+building_order_keep
+building_order_castle
+	add acot versions of jobs to both
+	has the decision origins overwrite available
+
+### Pop Jobs:
+squire
+	disabled when an acot variation is available
