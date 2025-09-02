@@ -1,0 +1,23 @@
+inline_script = {
+	script = zones/xhk_acot_knights/knight_zone
+	tier = dm
+	knight_job = job_delta_knight_add
+}
+
+inline_script = {
+	script = zones/xhk_acot_knights/knight_zone
+	tier = ae
+	knight_job = job_alpha_knight_add
+}
+
+inline_script = {
+	script = zones/xhk_acot_knights/knight_zone
+	tier = phanon
+	knight_job = job_phanon_knight_add
+}
+
+inline_script = {
+	script = zones/xhk_acot_knights/knight_zone
+	tier = sigma
+	knight_job = job_stellarite_knight_add
+}

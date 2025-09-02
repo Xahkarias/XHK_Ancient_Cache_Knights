@@ -1,0 +1,74 @@
+decision_consecrate_habitat_knights_$tier$ = {
+	owned_planets_only = yes
+
+	enactment_time = 360
+
+	potential = {
+		owner = {
+			## SWAPPED THIS LINE
+			has_toxic_knights_origin = yes
+			has_relic = r_toxic_god
+		}
+		uses_district_set = $tier$_habitat
+		NOR = {
+			has_building = building_order_castle
+			has_building = building_order_keep
+		}
+		NOT = { has_planet_flag = xhk_acot_knight_hab }
+	}
+
+	allow = {
+		free_building_slots > 0
+		custom_tooltip = {
+			fail_text = requires_another_consecration
+			owner = {
+				check_variable = {
+					which = toxic_castles_available
+					value > 0
+				}
+			}
+		}
+	}
+
+	on_queued = {
+		owner = {
+			change_variable = {
+				which = toxic_castles_available
+				value = -1
+			}
+		}
+	}
+
+	on_unqueued = {
+		owner = {
+			change_variable = {
+				which = toxic_castles_available
+				value = 1
+			}
+		}
+	}
+
+	resources = {
+		category = decisions
+		cost = {
+			influence = 50
+		}
+	}
+
+	effect = {
+		hidden_effect = {
+			set_planet_flag = xhk_acot_knight_hab
+			add_zone = {
+				district = $hab_district$
+				zone = $new_zone$
+				zone_slot = 1
+				replace = yes
+			}
+			add_building = {
+				zone = $new_zone$
+				building = building_order_castle
+			}
+		}
+		custom_tooltip = decision_consecrate_habitat_knights_effect
+	}
+}

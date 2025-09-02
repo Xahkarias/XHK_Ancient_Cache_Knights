@@ -1,0 +1,27 @@
+inline_script = {
+	script = decisions/xhk_acot_knights/consecrate
+	tier = dm
+	hab_district = district_dm_hab_housing
+	new_zone = zone_habitat_knights_dm
+}
+
+inline_script = {
+	script = decisions/xhk_acot_knights/consecrate
+	tier = ae
+	hab_district = district_ae_hab_housing
+	new_zone = zone_habitat_knights_ae
+}
+
+inline_script = {
+	script = decisions/xhk_acot_knights/consecrate
+	tier = phanon
+	hab_district = district_hab_phanon_housing
+	new_zone = zone_habitat_knights_phanon
+}
+
+inline_script = {
+	script = decisions/xhk_acot_knights/consecrate
+	tier = sigma
+	hab_district = district_hab_stellarite_housing
+	new_zone = zone_habitat_knights_sigma
+}
