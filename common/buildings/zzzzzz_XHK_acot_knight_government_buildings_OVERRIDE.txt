@@ -18,12 +18,8 @@ building_order_keep = {
 	}
 
 	potential = {
-		owner = { 
-			OR = {
-				has_origin = origin_toxic_knights
-				has_country_flag = decision_toxic_knights
-			}
-		}
+		## CHANGED THIS
+		owner = { has_toxic_knights_origin = yes }
 		has_planet_flag = toxic_knights_habitat
 		owner = { NOT = { has_country_flag = quest_abandoned } }
 	}
@@ -31,12 +27,7 @@ building_order_keep = {
 	destroy_trigger = {
 		NAND = {
 			exists = owner
-			owner = {
-				OR = {
-					has_origin = origin_toxic_knights
-					has_country_flag = decision_toxic_knights
-				}
-			}
+			owner = { has_toxic_knights_origin = yes }
 		}
 	}
 
@@ -564,12 +555,7 @@ building_order_castle = {
 	destroy_trigger = {
 		NAND = {
 		   	exists = owner
-		   	owner = {
-				OR = {
-					has_origin = origin_toxic_knights
-				 	has_country_flag = decision_toxic_knights
-				}
-		   	}
+		   	owner = { has_toxic_knights_origin = yes }
 		}
 	}
 
