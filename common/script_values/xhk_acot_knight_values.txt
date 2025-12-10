@@ -1,0 +1,15 @@
+xhk_aot_knight_level = {
+    base = 1
+    modifier = {
+        set = 2
+        xhk_aot_knight_is_alpha = yes
+    }
+    modifier = {
+        set = 4
+        xhk_aot_knight_is_phanon = yes
+    }
+    modifier = {
+        set = 6
+        xhk_aot_knight_is_stellarite = yes
+    }
+}

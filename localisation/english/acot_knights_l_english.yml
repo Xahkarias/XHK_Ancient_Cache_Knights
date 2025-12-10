@@ -86,6 +86,10 @@ job_stellarite_knight_commander_desc: "This grand master wields forces so powerf
 mod_job_stellarite_knight_commander_add: "$job_stellarite_knight_commander$"
 mod_pop_stellarite_knight_commander_bonus_workforce_mult: "Job Efficiency for $job_stellarite_knight_commander_plural$"
 
+ ### zone
+ zone_xhk_acot_knights: "$district_xhk_dm_hab_knights$"
+ zone_xhk_acot_knights_desc: "$district_xhk_dm_hab_knights_desc$"
+
 ### habitat districts
 
 district_xhk_dm_hab_knights: "Shadow Stronghold"

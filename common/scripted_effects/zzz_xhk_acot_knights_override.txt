@@ -1,0 +1,64 @@
+# ----------------------------------- Save zones to be restored ---------------------------------- #
+save_special_zones = {
+    # Store information persistent.
+    if = {
+        limit = {
+            has_zone = { zone = zone_habitat_knights }
+        }
+        # set_variable = { which = zone_habitat_knights value = 1 }
+        set_planet_flag = has_zone_habitat_knights
+    }
+    if = {
+        limit = {
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        # set_variable = { which = zone_habitat_knights value = 1 }
+        set_planet_flag = has_zone_habitat_acot_knights
+    }
+}
+# ---------------------------- Restore lost zones due to planet change --------------------------- #
+restore_special_zones = {
+    # Restore consecrated toxic god keep when retrofitting.
+    if = {
+        limit = {
+            # is_variable_set = zone_habitat_knights
+            has_planet_flag = has_zone_habitat_knights
+        }
+        hidden_effect = {
+            switch = {
+                trigger = is_planet_class
+                pc_dm_habitat = { add_zone = { district = district_dm_hab_housing zone = zone_habitat_knights zone_slot = 1 replace = yes } }
+                pc_ae_habitat = { add_zone = { district = district_ae_hab_housing zone = zone_habitat_knights zone_slot = 1 replace = yes } }
+                pc_phanon_habitat = { add_zone = { district = district_hab_phanon_housing zone = zone_habitat_knights zone_slot = 1 replace = yes } }
+                pc_sigma_habitat = { add_zone = { district = district_hab_stellarite_housing zone = zone_habitat_knights zone_slot = 1 replace = yes } }
+            }
+            add_building = {
+                zone = zone_habitat_knights
+                building = building_order_castle
+            }
+        }
+        # clear_variable = zone_habitat_knights
+        remove_planet_flag = has_zone_habitat_knights
+    }
+    if = {
+        limit = {
+            # is_variable_set = zone_habitat_knights
+            has_planet_flag = has_zone_habitat_acot_knights
+        }
+        hidden_effect = {
+            switch = {
+                trigger = is_planet_class
+                pc_dm_habitat = { add_zone = { district = district_dm_hab_housing zone = zone_xhk_acot_knights zone_slot = 1 replace = yes } }
+                pc_ae_habitat = { add_zone = { district = district_ae_hab_housing zone = zone_xhk_acot_knights zone_slot = 1 replace = yes } }
+                pc_phanon_habitat = { add_zone = { district = district_hab_phanon_housing zone = zone_xhk_acot_knights zone_slot = 1 replace = yes } }
+                pc_sigma_habitat = { add_zone = { district = district_hab_stellarite_housing zone = zone_xhk_acot_knights zone_slot = 1 replace = yes } }
+            }
+            add_building = {
+                zone = zone_xhk_acot_knights
+                building = building_order_castle
+            }
+        }
+        # clear_variable = zone_habitat_knights
+        remove_planet_flag = has_zone_habitat_acot_knights
+    }
+}
