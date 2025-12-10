@@ -1,379 +1,321 @@
-######
-# SQUIRE JOBS
-######
 
-delta_squire = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/squire
-		NUM_AMENITIES = 400
-		CURSE_GROWTH = 0.125
-		UPKEEP_BASE = "
-			alloys = 1
-		"
-		UPKEEP_CURSE = "
-			alloys = 1
-		"
-		PLANET_MOD = "
-			planet_defense_armies_add = 1
-			pop_knight_bonus_workforce_mult = 0.0275
-			planet_knights_upkeep_mult = 0.005
-			pop_knight_commander_bonus_workforce_mult = 0.015
-			pop_delta_knight_bonus_workforce_mult = 0.0275
-			planet_delta_knights_upkeep_mult = 0.005
-			pop_delta_knight_commander_bonus_workforce_mult = 0.015
-		"
-		
-	}
-	swappable_data = {
-		default = {
-			condition_string = WORKER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
+# NO MORE SQUIRES, AND THESE ARE SWAPS
 
-	possible = {
-		hidden_trigger = { exists = owner }
-		owner = {
-			is_gestalt = no
-		}
-		exists = planet
-		planet = {
-			OR = {
-				has_active_building = building_order_keep
-				has_active_building = building_order_castle
-			}
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-		}
-	}
-}
-
-alpha_squire = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/squire
-		NUM_AMENITIES = 800
-		CURSE_GROWTH = 0.15
-		UPKEEP_BASE = "
-			alloys = 1
-		"
-		UPKEEP_CURSE = "
-			alloys = 2
-		"
-		PLANET_MOD = "
-			planet_defense_armies_add = 2
-			pop_knight_bonus_workforce_mult = 0.03
-			planet_knights_upkeep_mult = 0.005
-			pop_knight_commander_bonus_workforce_mult = 0.0175
-			pop_alpha_knight_bonus_workforce_mult = 0.03
-			planet_alpha_knights_upkeep_mult = 0.005
-			pop_alpha_knight_commander_bonus_workforce_mult = 0.0175
-		"
-		
-	}
-	swappable_data = {
-		default = {
-			condition_string = WORKER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-	possible = {
-		hidden_trigger = { exists = owner }
-		owner = {
-			is_gestalt = no
-		}
-		exists = planet
-		planet = {
-			OR = {
-				has_active_building = building_order_keep
-				has_active_building = building_order_castle
-			}
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-		}
-	}
-}
-
-phanon_squire = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/squire
-		NUM_AMENITIES = 1200
-		CURSE_GROWTH = 0.175
-		UPKEEP_BASE = "
-			alloys = 1
-		"
-		UPKEEP_CURSE = "
-			alloys = 2
-		"
-		PLANET_MOD = "
-			planet_defense_armies_add = 2
-			pop_knight_bonus_workforce_mult = 0.0325
-			planet_knights_upkeep_mult = 0.005
-			pop_knight_commander_bonus_workforce_mult = 0.02
-			pop_phanon_knight_bonus_workforce_mult = 0.0325
-			planet_phanon_knights_upkeep_mult = 0.005
-			pop_phanon_knight_commander_bonus_workforce_mult = 0.02
-		"
-	}
-	swappable_data = {
-		default = {
-			condition_string = WORKER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-	possible = {
-		hidden_trigger = { exists = owner }
-		owner = {
-			is_gestalt = no
-		}
-		exists = planet
-		planet = {
-			OR = {
-				has_active_building = building_order_keep
-				has_active_building = building_order_castle
-			}
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-		}
-	}
-}
-
-stellarite_squire = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/squire
-		NUM_AMENITIES = 1600
-		CURSE_GROWTH = 0.2
-		UPKEEP_BASE = "
-			alloys = 1
-		"
-		UPKEEP_CURSE = "
-			alloys = 2
-		"
-		PLANET_MOD = "
-			planet_defense_armies_add = 2
-			pop_knight_bonus_workforce_mult = 0.035
-			planet_knights_upkeep_mult = 0.005
-			pop_knight_commander_bonus_workforce_mult = 0.0225
-			pop_stellarite_knight_bonus_workforce_mult = 0.035
-			planet_stellarite_knights_upkeep_mult = 0.005
-			pop_stellarite_knight_commander_bonus_workforce_mult = 0.0225
-		"
-	}
-	swappable_data = {
-		default = {
-			condition_string = WORKER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-	possible = {
-		hidden_trigger = { exists = owner }
-		owner = {
-			is_gestalt = no
-		}
-		exists = planet
-		planet = {
-			OR = {
-				has_active_building = building_order_keep
-				has_active_building = building_order_castle
-			}
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-		}
-	}
-}
-
-########
 
 delta_knight = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/knight
-		BASE_UNITY = 9
-		BASE_RESEARCH = 8
-		BASE_LOGIC = 1.5
-		UPKEEP_LUMINOUS = "acot_sr_dark_energy = 1"
-		UPKEEP_BASE = "sr_dark_matter = 1"
-		NUM_ARMIES = 3
-		NUM_AMENITIES = 1000
-		NAVAL_CAP = 6
-		QUEST_PROG = 0.0225
-	}
-	swappable_data = {
-		default = {
-			condition_string = SPECIALIST_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    category = specialist
 
-alpha_knight = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/knight
-		BASE_UNITY = 18
-		BASE_RESEARCH = 16
-		BASE_LOGIC = 2
-		UPKEEP_LUMINOUS = "
-			sr_dark_matter = 1
-			sr_dark_matter = 1
-		"
-		UPKEEP_BASE = "
-			sr_dark_matter = 1
-			sr_dark_matter = 1
-		"
-		NUM_ARMIES = 4
-		NUM_AMENITIES = 1500
-		NAVAL_CAP = 8
-		QUEST_PROG = 0.025
-	}
-	swappable_data = {
-		default = {
-			condition_string = SPECIALIST_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_acot_dm_stronghold
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_alpha = yes
+            }
+            name = alpha_knight
+            desc = alpha_knight_desc
+            icon = alpha_knight
+            building_icon = building_acot_ae_stronghold
+            condition_string = SPECIALIST_JOB_TRIGGER
+            weight = 2
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_phanon = yes
+            }
+            name = phanon_knight
+            desc = phanon_knight_desc
+            icon = phanon_knight
+            building_icon = building_phanon_stronghold
+            condition_string = SPECIALIST_JOB_TRIGGER
+            weight = 2
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_stellarite = yes
+            }
+            name = stellarite_knight
+            desc = stellarite_knight_desc
+            icon = stellarite_knight
+            building_icon = building_stellarite_stronghold
+            condition_string = SPECIALIST_JOB_TRIGGER
+            weight = 2
+        }
+    }
+    tags = { soldier unity research }
 
-phanon_knight = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/knight
-		BASE_UNITY = 30
-		BASE_RESEARCH = 25
-		BASE_LOGIC = 3
-		UPKEEP_LUMINOUS = "
-			aot_sr_runic_power = 6
-		"
-		UPKEEP_BASE = "
-			aot_sr_runic_power = 4
-		"
-		NUM_ARMIES = 6
-		NUM_AMENITIES = 2000
-		NAVAL_CAP = 10
-		QUEST_PROG = 0.0275
-	}
-	swappable_data = {
-		default = {
-			condition_string = SPECIALIST_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_enslaved = no
+    }
 
-stellarite_knight = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/knight
-		BASE_UNITY = 120
-		BASE_RESEARCH = 75
-		BASE_LOGIC = 4
-		UPKEEP_LUMINOUS = "
-			acot_sr_stellarite = 6
-		"
-		UPKEEP_BASE = "
-			acot_sr_stellarite = 4
-		"
-		NUM_ARMIES = 8
-		NUM_AMENITIES = 2500
-		NAVAL_CAP = 12
-		QUEST_PROG = 0.03
-	}
-	swappable_data = {
-		default = {
-			condition_string = SPECIALIST_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
 
-#####
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 8
+            mult = value:knights_unity_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 4
+            engineering_research = 4
+            society_research = 4
+            mult = value:knights_research_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 1
+            mult = value:knights_research_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        upkeep = {
+            alloys = 1
+            sr_dark_matter = 0.5
+            acot_sr_dark_energy = 0.5
+            mult = value:knights_upkeep_modifier
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_alpha = yes
+            }
+            sr_dark_matter = 0.5
+            acot_sr_dark_energy = 0.5
+            alloys = 1
+            mult = value:knights_upkeep_modifier
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_phanon = yes
+            }
+            sr_dark_matter = -0.5
+            acot_sr_dark_energy = -0.5
+            aot_sr_runic_power = 2
+            mult = value:knights_upkeep_modifier
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_stellarite = yes
+            }
+            sr_dark_matter = -0.5
+            acot_sr_dark_energy = -0.5
+            acot_sr_stellarite = 2
+            mult = value:knights_upkeep_modifier
+        }
+    }
+
+    planet_modifier = {
+        planet_defense_armies_add = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+        }
+        planet_amenities_add = 500
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+        mult = value:xhk_aot_knight_level
+    }
+
+    country_modifier = {
+        knight_quest_progress_add = 0.010
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_naval_cap_add = 4
+        mult = value:xhk_aot_knight_level
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        factor = 1.2
+        add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+        mult = value:job_weights_modifier|JOB|bureaucrat|RESOURCE|unity|
+        mult = value:job_weights_research_modifier|JOB|knight|
+    }
+
+    inline_script = "jobs/automodding_priority_unity"
+
+    promotion = {
+        time = @standard_promotion_time
+        effect = {
+            pop_amount_change_category = {
+                CATEGORY = specialist
+                AMOUNT = local_pop_amount
+            }
+        }
+    }
+}
 
 delta_knight_commander = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/commander
-		BASE_UNITY = 10
-		BASE_RESEARCH = 8
-		BASE_LOGIC = 3
-		UPKEEP_BASE = "
-			sr_dark_matter = 2
-			acot_sr_dark_energy = 2
-		"
-		# x100 since single pop
-		NUM_AMENITIES = 120000
-		NAVAL_CAP = 1200
-	}
-	swappable_data = {
-		default = {
-			condition_string = RULER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    category = ruler
 
-alpha_knight_commander = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/commander
-		BASE_UNITY = 24
-		BASE_RESEARCH = 16
-		BASE_LOGIC = 4
-		UPKEEP_BASE = "
-			sr_dark_matter = 4
-			acot_sr_dark_energy = 4
-		"
-		# x100 since single pop
-		NUM_AMENITIES = 240000
-		NAVAL_CAP = 2000
-	}
-	swappable_data = {
-		default = {
-			condition_string = RULER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    swappable_data = {
+        default = {
+            condition_string = RULER_JOB_TRIGGER
+            building_icon = building_acot_dm_stronghold
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_alpha = yes
+            }
+            name = alpha_knight_commander
+            desc = alpha_knight_commander_desc
+            icon = alpha_knight
+            building_icon = building_acot_ae_stronghold
+            condition_string = RULER_JOB_TRIGGER
+            weight = 2
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_phanon = yes
+            }
+            name = phanon_knight_commander
+            desc = phanon_knight_commander_desc
+            icon = phanon_knight
+            building_icon = building_phanon_stronghold
+            condition_string = RULER_JOB_TRIGGER
+            weight = 2
+        }
+        swap_type = {
+            trigger = {
+                xhk_aot_knight_is_stellarite = yes
+            }
+            name = stellarite_knight_commander
+            desc = stellarite_knight_commander_desc
+            icon = stellarite_knight
+            building_icon = building_stellarite_stronghold
+            condition_string = RULER_JOB_TRIGGER
+            weight = 2
+        }
+    }
 
-phanon_knight_commander = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/commander
-		BASE_UNITY = 36
-		BASE_RESEARCH = 25
-		BASE_LOGIC = 6
-		UPKEEP_BASE = "
-			aot_sr_runic_power = 16
-		"
-		# x100 since single pop
-		NUM_AMENITIES = 360000
-		NAVAL_CAP = 4000
-	}
-	swappable_data = {
-		default = {
-			condition_string = RULER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
-}
+    tags = { unity research amenities soldier }
 
-stellarite_knight_commander = {
-	inline_script = {
-		script = pop_jobs/xhk_acot_knights/commander
-		BASE_UNITY = 128
-		BASE_RESEARCH = 75
-		BASE_LOGIC = 8
-		UPKEEP_BASE = "
-			acot_sr_stellarite = 18
-		"
-		# x100 since single pop
-		NUM_AMENITIES = 480000
-		NAVAL_CAP = 7000
-	}
-	swappable_data = {
-		default = {
-			condition_string = RULER_JOB_TRIGGER
-			building_icon = building_order_keep
-		}
-	}
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 40
+            mult = value:knight_commander_unity_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 20
+            engineering_research = 20
+            society_research = 20
+            mult = value:knight_commander_research_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knight_commander_research_output_modifier
+            mult = value:xhk_aot_knight_level
+        }
+        upkeep = {
+            alloys = 200
+            sr_dark_matter = 400
+            acot_sr_dark_energy = 400
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_alpha = yes
+            }
+            alloys = 200
+            sr_dark_matter = 200
+            acot_sr_dark_energy = 200
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_phanon = yes
+            }
+            sr_dark_matter = -400
+            acot_sr_dark_energy = -400
+            aot_sr_runic_power = 600
+        }
+        upkeep = {
+            trigger = {
+                xhk_aot_knight_is_stellarite = yes
+            }
+            sr_dark_matter = -400
+            acot_sr_dark_energy = -400
+            acot_sr_stellarite = 600
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 50000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+        mult = value:xhk_aot_knight_level
+    }
+
+    country_modifier = {
+        country_naval_cap_add = 600
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        mult = value:job_weights_modifier|JOB|knight_commander|RESOURCE|unity|
+        mult = value:job_weights_research_modifier|JOB|knight_commander|
+    }
+
+    inline_script = "jobs/automodding_priority_charisma"
+
+    promotion = {
+        time = @standard_promotion_time
+        effect = {
+            pop_amount_change_category = {
+                CATEGORY = ruler
+                AMOUNT = local_pop_amount
+            }
+        }
+    }
 }

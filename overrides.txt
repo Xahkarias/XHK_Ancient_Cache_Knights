@@ -6,6 +6,12 @@ building_order_castle
 	add acot versions of jobs to both
 	has the decision origins overwrite available
 
+### Decisions:
+decision_consecrate_habitat_knights
+
+### scripted effects:
+save_special_zones
+restore_special_zones
+    from aot habitats
+
 ### Pop Jobs:
-squire
-	disabled when an acot variation is available

@@ -1,3 +1,0 @@
-
-
-need to make the castle not be destroyed on upgrading the habitat

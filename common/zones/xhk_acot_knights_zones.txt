@@ -1,23 +1,87 @@
-inline_script = {
-	script = zones/xhk_acot_knights/knight_zone
-	tier = dm
-	knight_job = job_delta_knight_add
-}
 
-inline_script = {
-	script = zones/xhk_acot_knights/knight_zone
-	tier = ae
-	knight_job = job_alpha_knight_add
-}
+zone_xhk_acot_knights = {
+    icon = GFX_district_specialization_knight_commander
+    base_buildtime = @zone_buildtime
 
-inline_script = {
-	script = zones/xhk_acot_knights/knight_zone
-	tier = phanon
-	knight_job = job_phanon_knight_add
-}
+    swap_type = district_xhk_dm_hab_knights
+    swap_type_weight = 10
 
-inline_script = {
-	script = zones/xhk_acot_knights/knight_zone
-	tier = sigma
-	knight_job = job_stellarite_knight_add
+    potential = { # planet scope
+        exists = owner
+        owner = {
+            ## SWAPPED THIS LINE
+            has_toxic_knights_origin = yes
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_enigmatic_capital = yes
+        OR = {
+            uses_district_set = habitat
+            is_aot_habitat = yes
+        }
+        OR = {
+            has_planet_flag = toxic_knights_habitat
+            has_building = building_order_castle
+        }
+    }
+
+    unlock = { # planet scope
+        exists = owner
+        owner = {
+            ## SWAPPED THIS LINE
+            has_toxic_knights_origin = yes
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_enigmatic_capital = yes
+        OR = {
+            uses_district_set = habitat
+            is_aot_habitat = yes
+        }
+        OR = {
+            has_planet_flag = toxic_knights_habitat
+            has_building = building_order_castle
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        cost = {
+            minerals = @zone_cost
+        }
+    }
+
+    convert_to = {
+        zone_fortress
+    }
+
+    max_buildings = 3
+
+    zone_sets = {
+        habitat_urban
+    }
+
+    included_building_sets = {
+        knights
+        fortress
+        origin
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        job_delta_knight_add = @scaling_district_2_jobs
+        mult = owner.value:hab_void_dweller_jobs
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
 }

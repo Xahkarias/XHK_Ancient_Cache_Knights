@@ -1,10 +1,10 @@
-version="v4p0u1"
+version="v4p2u0"
 tags={
 	"Fixes"
 	"Economy"
 	"Balance"
 }
 thumbnail="thumbnail.png"
-name="Ancient Cache of Knights"
-supported_version="v4.0.*"
+name="XHK Ancient Cache of Knights"
+supported_version="v4.2.*"
 remote_file_id="3056922021"

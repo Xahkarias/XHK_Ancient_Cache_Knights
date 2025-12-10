@@ -1,542 +1,223 @@
 #############
 # Government buildings
 #############
+
+## COPIED MY DECISION ORIGINS BUT THEN ADDED ACOT KNIGHTS
 building_order_keep = {
-	base_buildtime = 180
+    base_buildtime = 180
 
-	can_demolish = no
-	can_be_disabled = no
+    can_demolish = no
+    can_be_disabled = no
 
-	empire_limit = {
-		base = 1
-	}
+    empire_limit = {
+        base = 1
+    }
 
-	category = government
+    category = government
 
-	building_sets = {
-		knights
-	}
+    building_sets = {
+        knights
+    }
 
-	potential = {
-		## CHANGED THIS
-		owner = { has_toxic_knights_origin = yes }
-		has_planet_flag = toxic_knights_habitat
-		owner = { NOT = { has_country_flag = quest_abandoned } }
-	}
+    potential = {
+        ## CHANGED THIS
+        owner = { has_toxic_knights_origin = yes }
+        has_planet_flag = toxic_knights_habitat
+        owner = { NOT = { has_country_flag = quest_abandoned } }
+    }
 
-	destroy_trigger = {
-		NAND = {
-			exists = owner
-			owner = { has_toxic_knights_origin = yes }
-		}
-	}
+    destroy_trigger = {
+        OR = {
+            NOT = { exists = owner }
+            ## CHANGED THIS
+            NOT = { owner = { has_toxic_knights_origin = yes } }
+        }
+    }
 
-	# this stuff doesnt change depending on the tech
-	planet_modifier = {
-		planet_resettlement_unemployed_destination_mult = 1
-	}
+    triggered_planet_modifier = {
+        potential = {
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+        planet_resettlement_unemployed_destination_mult = 1
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			owner = { has_country_flag = toxoids_7090_a }
-		}
-		planet_stability_add = 15
-	}
+    ## SPECIFICALLY ADDS THE COMMANDER JOB THAT IS USUALLY ON THE CAPITAL
+    ## ONLY TRIGGERS ON DECISION ORIGIN, NOT REAL ORIGIN
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = decision_toxic_knights  }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_commander_add = 1
+        job_knight_add = 100
+    }
 
-	#### modifier guide:
-	# i am not proud of the following code but whatever
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7060_A }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	# -----------------------------------------------------------
-	# vanilla
-	# this isnt my fault at least
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-		}
-		modifier = { 
-			job_knight_add = 200
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { NOT = { has_country_flag = quest_over } }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        modifier = {
+            job_knight_add = @building_static_jobs
+        }
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7060_A }
-		}
-		job_knight_add = 200
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        planet_stability_add = 15
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { NOT = { has_country_flag = quest_over } }
-		}
-		modifier = {
-			job_knight_add = 200
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7130_a }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7130_a }
-		}
-		job_knight_add = 200
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7060_B }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7060_B }
-		}
-		job_knight_add = 200
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7040_c }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7040_c }
-		}
-		job_knight_add = 200
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7095_a }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7095_a }
-		}
-		job_knight_add = 200
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7160_a }
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
+        }
+        job_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = no
-			owner = { has_country_flag = toxoids_7160_a }
-		}
-		job_knight_add = 200
-	}
+    ############################################################################
+    # ACOT KNIGHTS
+    ############################################################################
+    triggered_planet_modifier = {
+        potential = {
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+        planet_resettlement_unemployed_destination_mult = 1
+    }
 
-	# -----------------------------------------------------------
-	# this removes the commander job from the capital
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			has_enigmatic_capital = yes
-		}
-		job_knight_commander_add = -1
-	}
+    ## SPECIFICALLY ADDS THE COMMANDER JOB THAT IS USUALLY ON THE CAPITAL
+    ## ONLY TRIGGERS ON DECISION ORIGIN, NOT REAL ORIGIN
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = decision_toxic_knights  }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_commander_add = 1
+        job_delta_knight_add = 100
+    }
+    # IF actual knight origin, remove the commander when acoted
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_origin = origin_toxic_knights }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_knight_commander_add = -1
+    }
 
-	# -----------------------------------------------------------
-	# delta capital
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-		}
-		modifier = { 
-			job_delta_knight_add = 200
-			job_delta_knight_commander_add = 1
-		}
-	}
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7060_A }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { NOT = { has_country_flag = quest_over } }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        modifier = {
+            job_delta_knight_add = @building_static_jobs
+        }
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = 15
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7130_a }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7060_B }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7040_c }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7095_a }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7160_a }
+            has_zone = { zone = zone_xhk_acot_knights }
+        }
+        job_delta_knight_add = @building_static_jobs
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7060_A }
-		}
-		job_delta_knight_add = 200
-	}
+    resources = {
+        cost = {
+            minerals = 1000
+        }
+        category = planet_buildings
+    }
 
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { NOT = { has_country_flag = quest_over } }
-		}
-		modifier = {
-			job_delta_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7130_a }
-		}
-		job_delta_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7060_B }
-		}
-		job_delta_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7040_c }
-		}
-		job_delta_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7095_a }
-		}
-		job_delta_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7160_a }
-		}
-		job_delta_knight_add = 200
-	}
-
-	# -----------------------------------------------------------
-	# alpha capital
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-		}
-		modifier = { 
-			job_alpha_knight_add = 200
-			job_alpha_knight_commander_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7060_A }
-		}
-		job_alpha_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { NOT = { has_country_flag = quest_over } }
-		}
-		modifier = {
-			job_alpha_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7130_a }
-		}
-		job_alpha_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7060_B }
-		}
-		job_alpha_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7040_c }
-		}
-		job_alpha_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7095_a }
-		}
-		job_alpha_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-			owner = { has_country_flag = toxoids_7160_a }
-		}
-		job_alpha_knight_add = 200
-	}
-	
-	# -----------------------------------------------------------
-	# phanon capital
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-		}
-		modifier = { 
-			job_phanon_knight_add = 200
-			job_phanon_knight_commander_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7060_A }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { NOT = { has_country_flag = quest_over } }
-		}
-		modifier = {
-			job_phanon_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7130_a }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7060_B }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7040_c }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7095_a }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-			owner = { has_country_flag = toxoids_7160_a }
-		}
-		job_phanon_knight_add = 200
-	}
-
-	# -----------------------------------------------------------
-	# stellarite capital
-	# -----------------------------------------------------------
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-		}
-		modifier = { 
-			job_stellarite_knight_add = 200
-			job_stellarite_knight_commander_add = 1
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7060_A }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { NOT = { has_country_flag = quest_over } }
-		}
-		modifier = {
-			job_stellarite_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7130_a }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7060_B }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7040_c }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7095_a }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-			has_global_flag = has_aot_mod
-			owner = { has_country_flag = toxoids_7160_a }
-		}
-		job_stellarite_knight_add = 200
-	}
-
-	# -----------------------------------------------------------
-
-	resources = {
-		cost = {
-			minerals = 1000
-		}
-		category = planet_buildings
-	}
-
-	triggered_desc = {
-		text = building_order_keep_effect
-	}
-
-	triggered_desc = {
-		text = job_knight_effect_desc
-	}
-	
-	triggered_desc = {
-		text = job_knight_commander_effect_desc
-	}
-
-	
+    triggered_desc = {
+        text = building_order_keep_effect
+    }
 }
 
 building_order_castle = {
@@ -566,126 +247,41 @@ building_order_castle = {
 	# vanilla capital
 	triggered_planet_modifier = {
 		potential = {
-			has_enigmatic_capital = no
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
 		}
 		modifier = { 
 			job_knight_add = 200
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
-			has_enigmatic_capital = no
+            NOT = { has_zone = { zone = zone_xhk_acot_knights }}
 		}
 		modifier = {
 			job_knight_add = 200
 		}
 	}
 
-	# delta capital
+	# acot knights
 	triggered_planet_modifier = {
 		potential = {
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
+            has_zone = { zone = zone_xhk_acot_knights }
 		}
 		modifier = { 
 			job_delta_knight_add = 200
 		}
 	}
-
 	triggered_planet_modifier = {
 		potential = {
 			owner = { NOT = { has_country_flag = quest_over } }
-			OR = {
-				has_building = building_acot_dm_ancient_hive_cluster
-				has_building = building_acot_dm_ancient_control_center
-				has_building = building_acot_dm_ancient_palace
-			}
+            has_zone = { zone = zone_xhk_acot_knights }
 		}
 		modifier = {
 			job_delta_knight_add = 200
 		}
 	}
 
-	# alpha capital
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-		}
-		modifier = { 
-			job_alpha_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			owner = { NOT = { has_country_flag = quest_over } }
-			OR = {
-				has_building = building_acot_ae_ancient_hive_cluster
-				has_building = building_acot_ae_ancient_control_center
-				has_building = building_acot_ae_ancient_palace
-			}
-		}
-		modifier = {
-			job_alpha_knight_add = 200
-		}
-	}
-
-	# phanon capital
-	triggered_planet_modifier = {
-		potential = {
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-		}
-		modifier = { 
-			job_phanon_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			owner = { NOT = { has_country_flag = quest_over } }
-			OR = {
-				has_building = building_phanon_hive_cluster
-				has_building = building_phanon_control_center
-				has_building = building_phanon_palace
-			}
-		}
-		modifier = {
-			job_phanon_knight_add = 200
-		}
-	}
-
-	# stellarite capital
-	triggered_planet_modifier = {
-		potential = {
-			has_stellarite_capital = yes
-		}
-		modifier = { 
-			job_stellarite_knight_add = 200
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			owner = { NOT = { has_country_flag = quest_over } }
-			has_stellarite_capital = yes
-		}
-		modifier = {
-			job_stellarite_knight_add = 200
-		}
-	}
 
 	resources = {
 		category = planet_buildings
@@ -693,9 +289,5 @@ building_order_castle = {
 
 	triggered_desc = {
 		text = building_order_keep_effect
-	}
-
-	triggered_desc = {
-		text = job_knight_effect_desc
 	}
 }
