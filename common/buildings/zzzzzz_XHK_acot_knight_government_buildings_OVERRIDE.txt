@@ -3,6 +3,13 @@
 #############
 
 ## COPIED MY DECISION ORIGINS BUT THEN ADDED ACOT KNIGHTS
+# override order for knights a bit of a pain in the ass
+# Decision origins gets first dibs
+#   switches trigger to allow decision origin to take
+# then Ancient cache of knights gets to override
+#   adds delta knights
+# then extra goodies overwrites
+#   adds detection for voidframe zone
 building_order_keep = {
     base_buildtime = 180
 

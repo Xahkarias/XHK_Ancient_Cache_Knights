@@ -183,7 +183,7 @@ delta_knight_commander = {
             }
             name = alpha_knight_commander
             desc = alpha_knight_commander_desc
-            icon = alpha_knight
+            icon = alpha_knight_commander
             building_icon = building_acot_ae_stronghold
             condition_string = RULER_JOB_TRIGGER
             weight = 2
@@ -194,7 +194,7 @@ delta_knight_commander = {
             }
             name = phanon_knight_commander
             desc = phanon_knight_commander_desc
-            icon = phanon_knight
+            icon = phanon_knight_commander
             building_icon = building_phanon_stronghold
             condition_string = RULER_JOB_TRIGGER
             weight = 2
@@ -205,7 +205,7 @@ delta_knight_commander = {
             }
             name = stellarite_knight_commander
             desc = stellarite_knight_commander_desc
-            icon = stellarite_knight
+            icon = stellarite_knight_commander
             building_icon = building_stellarite_stronghold
             condition_string = RULER_JOB_TRIGGER
             weight = 2
