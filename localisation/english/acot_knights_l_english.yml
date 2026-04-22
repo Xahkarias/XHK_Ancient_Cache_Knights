@@ -92,18 +92,18 @@ mod_pop_stellarite_knight_commander_bonus_workforce_mult: "Job Efficiency for $j
 
 ### habitat districts
 
-district_xhk_dm_hab_knights: "Shadow Stronghold"
+ zone_xhk_acot_knights_dm: "Shadow Stronghold"
 district_xhk_dm_hab_knights_plural: "Shadow Strongholds"
-district_xhk_dm_hab_knights_desc: "These new strongholds, implementing prototype dark matter technology, shall arm our knights for a new age!"
+ zone_xhk_acot_knights_dm_desc: "These new strongholds, implementing prototype dark matter technology, shall arm our knights for a new age!"
 
-district_xhk_ae_hab_knights: "Alpha Fortress"
+ zone_xhk_acot_knights_de: "Alpha Fortress"
 district_xhk_ae_hab_knights_plural: "Alpha Fortresses"
-district_xhk_ae_hab_knights_desc: "The Order shall defeat everything that threatens the nation, even the decrepit corpses of the fallen ones!"
+ zone_xhk_acot_knights_de_desc: "The Order shall defeat everything that threatens the nation, even the decrepit corpses of the fallen ones!"
 
-district_xhk_pe_hab_knights: "§RRunic Bastion§!"
+ zone_xhk_acot_knights_pe: "§RRunic Bastion§!"
 district_xhk_pe_hab_knights_plural: "§RRunic Bastions§!"
-district_xhk_pe_hab_knights_desc: "$phanon_classified$"
+ zone_xhk_acot_knights_pe_desc: "$phanon_classified$"
 
-district_xhk_se_hab_knights: "§HNova Citadel§!"
+ zone_xhk_acot_knights_se: "§HNova Citadel§!"
 district_xhk_se_hab_knights_plural: "§HNova Citadels§!"
-district_xhk_se_hab_knights_desc: "§HOur citadels wield the power of the stars themselves! We shall sunder even the nameless gods above!§!"
+ zone_xhk_acot_knights_se_desc: "§HOur citadels wield the power of the stars themselves! We shall sunder even the nameless gods above!§!"

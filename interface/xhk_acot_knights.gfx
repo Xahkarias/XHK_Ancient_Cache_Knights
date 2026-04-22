@@ -1,0 +1,21 @@
+spriteTypes = {
+
+    # this is for icons that dont exist in voidframe
+
+    spriteType = {
+        name = "GFX_xhk_acot_knights_DM_KNIGHT"
+        texturefile = gfx/interface/icons/districts/district_specialization_icons/xhk_voidframe_zone_DM_KNIGHT.dds
+    }
+    spriteType = {
+        name = "GFX_xhk_acot_knights_DE_KNIGHT"
+        texturefile = gfx/interface/icons/districts/district_specialization_icons/xhk_voidframe_zone_DE_KNIGHT.dds
+    }
+    spriteType = {
+        name = "GFX_xhk_acot_knights_PE_KNIGHT"
+        texturefile = gfx/interface/icons/districts/district_specialization_icons/xhk_voidframe_zone_PE_KNIGHT.dds
+    }
+    spriteType = {
+        name = "GFX_xhk_acot_knights_SE_KNIGHT"
+        texturefile = gfx/interface/icons/districts/district_specialization_icons/xhk_voidframe_zone_SE_KNIGHT.dds
+    }
+}

@@ -5,3 +5,26 @@ has_toxic_knights_origin = {
         has_country_flag = decision_toxic_knights
     }
 }
+
+has_acot_knight_zone = {
+    OR = {
+        has_zone = { zone = zone_xhk_acot_knights_dm }
+        has_zone = { zone = zone_xhk_acot_knights_de }
+        has_zone = { zone = zone_xhk_acot_knights_pe }
+        has_zone = { zone = zone_xhk_acot_knights_se }
+    }
+}
+
+# overwrite these with voidframe
+has_acot_knight_delta_zone = {
+    has_zone = { zone = zone_xhk_acot_knights_dm }
+}
+has_acot_knight_alpha_zone = {
+    has_zone = { zone = zone_xhk_acot_knights_de }
+}
+has_acot_knight_phanon_zone = {
+    has_zone = { zone = zone_xhk_acot_knights_pe }
+}
+has_acot_knight_stellarite_zone = {
+    has_zone = { zone = zone_xhk_acot_knights_se }
+}

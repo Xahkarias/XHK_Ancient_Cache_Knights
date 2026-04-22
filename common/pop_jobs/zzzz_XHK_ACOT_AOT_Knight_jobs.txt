@@ -1,0 +1,818 @@
+
+# overwrite squires to make it work
+
+squire = {
+    category = worker
+    swappable_data = {
+        default = {
+            condition_string = WORKER_JOB_TRIGGER
+            building_icon = building_order_keep
+        }
+    }
+
+    tags = { soldier amenities }
+
+    is_capped_by_modifier = no
+    count_as_available_for_ai = yes
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+        is_enslaved = no
+    }
+
+    possible_precalc = can_fill_specialist_job #deliberate, they are baby knights
+
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+        exists = planet
+        planet = {
+            OR = {
+                has_active_building = building_order_keep
+                has_active_building = building_order_castle
+            }
+        }
+    }
+
+    triggered_planet_modifier = {
+        planet_defense_armies_add = 0.5
+        pop_knight_bonus_workforce_mult = 0.025
+        pop_delta_knight_bonus_workforce_mult = 0.025
+        pop_alpha_knight_bonus_workforce_mult = 0.025
+        pop_phanon_knight_bonus_workforce_mult = 0.025
+        pop_stellarite_knight_bonus_workforce_mult = 0.025
+        planet_knights_upkeep_mult = 0.005
+        pop_knight_commander_bonus_workforce_mult = 0.0125
+        pop_delta_knight_commander_bonus_workforce_mult = 0.0125
+        pop_alpha_knight_commander_bonus_workforce_mult = 0.0125
+        pop_phanon_knight_commander_bonus_workforce_mult = 0.0125
+        pop_stellarite_knight_commander_bonus_workforce_mult = 0.0125
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = {
+                    has_valid_civic = civic_dystopian_society
+                }
+            }
+        }
+        planet_amenities_add = 200
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    triggered_planet_pop_group_modifier_for_all = {
+        potential = {
+            has_modifier = syamelles_curse_habitat
+        }
+        bonus_pop_growth = 0.1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                has_modifier = syamelles_curse_habitat
+            }
+        }
+        fake_pop_growth_mod = 0.1
+    }
+
+    resources = {
+        category = planet_squires
+        upkeep = {
+            alloys = 0.5
+        }
+        upkeep = {
+            trigger = {
+                planet = { has_modifier = syamelles_curse_habitat }
+            }
+            alloys = 0.5
+        }
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner
+                owner = { has_technology = "tech_ground_defense_planning" }
+            }
+        }
+        modifier = {
+            country_naval_cap_add = 1
+        }
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_councilor = yes
+                    has_trait = leader_trait_bellicose
+                }
+            }
+        }
+
+        modifier = {
+            country_naval_cap_add = 0.5
+        }
+        mult = value:bellicose_naval_cap
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                any_owned_leader = {
+                    is_councilor = yes
+                    has_trait = leader_trait_bellicose
+                }
+            }
+        }
+        modifier = {
+            planet_defense_armies_add = 0.5
+        }
+        mult = value:bellicose_naval_cap
+    }
+
+    weight = {
+        weight = @worker_job_weight
+        factor = 1.2
+    }
+
+}
+
+delta_knight = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_acot_dm_stronghold
+        }
+    }
+    tags = { soldier unity research }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_enslaved = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 8
+            mult = value:knights_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 6
+            engineering_research = 6
+            society_research = 6
+            mult = value:knights_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 1
+            mult = value:knights_research_output_modifier
+        }
+        upkeep = {
+            alloys = 1
+            sr_dark_matter = 0.5
+            acot_sr_dark_energy = 0.5
+            mult = value:knights_upkeep_modifier
+        }
+    }
+
+    planet_modifier = {
+        planet_defense_armies_add = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+        }
+        planet_amenities_add = 500
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        knight_quest_progress_add = 0.010
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_naval_cap_add = 8
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        factor = 1.2
+        add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+    }
+
+    inline_script = "jobs/automodding_priority_unity"
+}
+
+alpha_knight = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_acot_ae_stronghold
+        }
+    }
+    tags = { soldier unity research }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_enslaved = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 16
+            mult = value:knights_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 16
+            engineering_research = 16
+            society_research = 16
+            mult = value:knights_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 1.5
+            mult = value:knights_research_output_modifier
+        }
+        upkeep = {
+            alloys = 1
+            sr_dark_matter = 1
+            acot_sr_dark_energy = 1
+            mult = value:knights_upkeep_modifier
+        }
+    }
+
+    planet_modifier = {
+        planet_defense_armies_add = 3
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+        }
+        planet_amenities_add = 750
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        knight_quest_progress_add = 0.010
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_naval_cap_add = 10
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        factor = 1.2
+        add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+    }
+
+    inline_script = "jobs/automodding_priority_unity"
+}
+
+phanon_knight = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_phanon_stronghold
+        }
+    }
+    tags = { soldier unity research }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_enslaved = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 32
+            mult = value:knights_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 32
+            engineering_research = 32
+            society_research = 32
+            mult = value:knights_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knights_research_output_modifier
+        }
+        upkeep = {
+            aot_sr_runic_power = 6
+            mult = value:knights_upkeep_modifier
+        }
+    }
+
+    planet_modifier = {
+        planet_defense_armies_add = 4
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+        }
+        planet_amenities_add = 1000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        knight_quest_progress_add = 0.010
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_naval_cap_add = 12
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        factor = 1.2
+        add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+    }
+
+    inline_script = "jobs/automodding_priority_unity"
+}
+
+stellarite_knight = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_stellarite_stronghold
+        }
+    }
+    tags = { soldier unity research }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_enslaved = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_specialist_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 75
+            mult = value:knights_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 60
+            engineering_research = 60
+            society_research = 60
+            mult = value:knights_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2.5
+            mult = value:knights_research_output_modifier
+        }
+        upkeep = {
+            acot_sr_stellarite = 6
+            mult = value:knights_upkeep_modifier
+        }
+    }
+
+    planet_modifier = {
+        planet_defense_armies_add = 6
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            owner = { has_country_flag = toxoids_7090_a }
+        }
+        planet_amenities_add = 1500
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        knight_quest_progress_add = 0.010
+    }
+
+    triggered_country_modifier = {
+        potential = {
+            always = yes
+        }
+        country_naval_cap_add = 16
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+        factor = 1.2
+        add = 5 #Somehow pops preferred to work as squires than as knights. No more.
+    }
+
+    inline_script = "jobs/automodding_priority_unity"
+}
+
+delta_knight_commander = {
+    category = ruler
+
+    swappable_data = {
+        default = {
+            condition_string = RULER_JOB_TRIGGER
+            building_icon = building_acot_dm_stronghold
+        }
+    }
+
+    tags = { unity research amenities soldier }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 40
+            mult = value:knight_commander_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 20
+            engineering_research = 20
+            society_research = 20
+            mult = value:knight_commander_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knight_commander_research_output_modifier
+        }
+        upkeep = {
+            alloys = 200
+            sr_dark_matter = 400
+            acot_sr_dark_energy = 400
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 50000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        country_naval_cap_add = 600
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+    }
+
+    inline_script = "jobs/automodding_priority_charisma"
+}
+
+alpha_knight_commander = {
+    category = ruler
+
+    swappable_data = {
+        default = {
+            condition_string = RULER_JOB_TRIGGER
+            building_icon = building_acot_ae_stronghold
+        }
+    }
+
+    tags = { unity research amenities soldier }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 80
+            mult = value:knight_commander_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 40
+            engineering_research = 40
+            society_research = 40
+            mult = value:knight_commander_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knight_commander_research_output_modifier
+        }
+        upkeep = {
+            alloys = 400
+            sr_dark_matter = 800
+            acot_sr_dark_energy = 800
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 50000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        country_naval_cap_add = 700
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+    }
+
+    inline_script = "jobs/automodding_priority_charisma"
+}
+
+phanon_knight_commander = {
+    category = ruler
+
+    swappable_data = {
+        default = {
+            condition_string = RULER_JOB_TRIGGER
+            building_icon = building_phanon_stronghold
+        }
+    }
+
+    tags = { unity research amenities soldier }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 160
+            mult = value:knight_commander_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 100
+            engineering_research = 100
+            society_research = 100
+            mult = value:knight_commander_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knight_commander_research_output_modifier
+        }
+        upkeep = {
+            aot_sr_runic_power = 1000
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 50000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        country_naval_cap_add = 1200
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+    }
+
+    inline_script = "jobs/automodding_priority_charisma"
+}
+
+stellarite_knight_commander = {
+    category = ruler
+
+    swappable_data = {
+        default = {
+            condition_string = RULER_JOB_TRIGGER
+            building_icon = building_stellarite_stronghold
+        }
+    }
+
+    tags = { unity research amenities soldier }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_ruler_job
+    possible = {
+        hidden_trigger = { exists = owner }
+        owner = {
+            is_gestalt = no
+        }
+    }
+
+    resources = {
+        category = planet_knights
+        produces = {
+            trigger = { exists = owner }
+            unity = 300
+            mult = value:knight_commander_unity_output_modifier
+        }
+        produces = {
+            trigger = { exists = owner }
+            physics_research = 200
+            engineering_research = 200
+            society_research = 200
+            mult = value:knight_commander_research_output_modifier
+        }
+        produces = {
+            trigger = {
+                exists = owner
+                owner = {
+                    has_country_flag = cosmogenesis_knights
+                }
+            }
+            advanced_logic = 2
+            mult = value:knight_commander_research_output_modifier
+        }
+        upkeep = {
+            acot_sr_stellarite = 1000
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 50000
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    country_modifier = {
+        country_naval_cap_add = 1600
+    }
+
+    weight = {
+        weight = @high_prio_specialist_job_weight
+    }
+
+    inline_script = "jobs/automodding_priority_charisma"
+}

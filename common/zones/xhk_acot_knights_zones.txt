@@ -1,10 +1,7 @@
 
-zone_xhk_acot_knights = {
-    icon = GFX_district_specialization_knight_commander
+zone_xhk_acot_knights_dm = {
+    icon = GFX_xhk_acot_knights_DM_KNIGHT
     base_buildtime = @zone_buildtime
-
-    swap_type = district_xhk_dm_hab_knights
-    swap_type_weight = 10
 
     potential = { # planet scope
         exists = owner
@@ -27,29 +24,30 @@ zone_xhk_acot_knights = {
     }
 
     unlock = { # planet scope
-        exists = owner
-        owner = {
-            ## SWAPPED THIS LINE
-            has_toxic_knights_origin = yes
-            NOT = {
-                has_country_flag = quest_abandoned
+
+        hidden_trigger = {
+            exists = owner
+            owner = {
+                ## SWAPPED THIS LINE
+                has_toxic_knights_origin = yes
+                NOT = {
+                    has_country_flag = quest_abandoned
+                }
             }
-        }
-        has_enigmatic_capital = yes
-        OR = {
-            uses_district_set = habitat
-            is_aot_habitat = yes
-        }
-        OR = {
-            has_planet_flag = toxic_knights_habitat
-            has_building = building_order_castle
+            has_enigmatic_capital = yes
+            OR = {
+                has_planet_flag = toxic_knights_habitat
+                has_building = building_order_castle
+            }
         }
     }
 
     resources = {
         category = planet_zones
         cost = {
-            minerals = @zone_cost
+            alloys = 1000
+            sr_dark_matter = 100
+            acot_sr_dark_energy = 100
         }
     }
 
@@ -74,6 +72,259 @@ zone_xhk_acot_knights = {
             always = yes
         }
         job_delta_knight_add = @scaling_district_2_jobs
+        mult = owner.value:hab_void_dweller_jobs
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+}
+
+zone_xhk_acot_knights_de = {
+    icon = GFX_xhk_acot_knights_DE_KNIGHT
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = {
+            ## SWAPPED THIS LINE
+            has_toxic_knights_origin = yes
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_ascended_capital = yes
+        OR = {
+            uses_district_set = habitat
+            is_aot_habitat = yes
+        }
+        OR = {
+            has_planet_flag = toxic_knights_habitat
+            has_building = building_order_castle
+        }
+    }
+
+    unlock = { # planet scope
+
+        hidden_trigger = {
+            exists = owner
+            owner = {
+                ## SWAPPED THIS LINE
+                has_toxic_knights_origin = yes
+                NOT = {
+                    has_country_flag = quest_abandoned
+                }
+            }
+            has_ascended_capital = yes
+            OR = {
+                has_planet_flag = toxic_knights_habitat
+                has_building = building_order_castle
+            }
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        cost = {
+            alloys = 1000
+            sr_dark_matter = 100
+            acot_sr_dark_energy = 100
+        }
+    }
+
+    convert_to = {
+        zone_fortress
+    }
+
+    max_buildings = 3
+
+    zone_sets = {
+        habitat_urban
+    }
+
+    included_building_sets = {
+        knights
+        fortress
+        origin
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        job_alpha_knight_add = @scaling_district_2_jobs
+        mult = owner.value:hab_void_dweller_jobs
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+}
+
+zone_xhk_acot_knights_pe = {
+    icon = GFX_xhk_acot_knights_PE_KNIGHT
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = {
+            ## SWAPPED THIS LINE
+            has_toxic_knights_origin = yes
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_phanon_capital = yes
+        OR = {
+            uses_district_set = habitat
+            is_aot_habitat = yes
+        }
+        OR = {
+            has_planet_flag = toxic_knights_habitat
+            has_building = building_order_castle
+        }
+    }
+
+    unlock = { # planet scope
+
+        hidden_trigger = {
+            exists = owner
+            owner = {
+                ## SWAPPED THIS LINE
+                has_toxic_knights_origin = yes
+                NOT = {
+                    has_country_flag = quest_abandoned
+                }
+            }
+            has_phanon_capital = yes
+            OR = {
+                has_planet_flag = toxic_knights_habitat
+                has_building = building_order_castle
+            }
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        cost = {
+            alloys = 1000
+            aot_sr_runic_power = 200
+        }
+    }
+
+    convert_to = {
+        zone_fortress
+    }
+
+    max_buildings = 3
+
+    zone_sets = {
+        habitat_urban
+    }
+
+    included_building_sets = {
+        knights
+        fortress
+        origin
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        job_phanon_knight_add = @scaling_district_2_jobs
+        mult = owner.value:hab_void_dweller_jobs
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+}
+
+zone_xhk_acot_knights_se = {
+    icon = GFX_xhk_acot_knights_SE_KNIGHT
+    base_buildtime = @zone_buildtime
+
+    potential = { # planet scope
+        exists = owner
+        owner = {
+            ## SWAPPED THIS LINE
+            has_toxic_knights_origin = yes
+            NOT = {
+                has_country_flag = quest_abandoned
+            }
+        }
+        has_stellarite_capital = yes
+        OR = {
+            uses_district_set = habitat
+            is_aot_habitat = yes
+        }
+        OR = {
+            has_planet_flag = toxic_knights_habitat
+            has_building = building_order_castle
+        }
+    }
+
+    unlock = { # planet scope
+
+        hidden_trigger = {
+            exists = owner
+            owner = {
+                ## SWAPPED THIS LINE
+                has_toxic_knights_origin = yes
+                NOT = {
+                    has_country_flag = quest_abandoned
+                }
+            }
+            has_stellarite_capital = yes
+            OR = {
+                has_planet_flag = toxic_knights_habitat
+                has_building = building_order_castle
+            }
+        }
+    }
+
+    resources = {
+        category = planet_zones
+        cost = {
+            alloys = 1000
+            acot_sr_stellarite = 200
+        }
+    }
+
+    convert_to = {
+        zone_fortress
+    }
+
+    max_buildings = 3
+
+    zone_sets = {
+        habitat_urban
+    }
+
+    included_building_sets = {
+        knights
+        fortress
+        origin
+    }
+
+    triggered_district_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        job_stellarite_knight_add = @scaling_district_2_jobs
         mult = owner.value:hab_void_dweller_jobs
     }
 
